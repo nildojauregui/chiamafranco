@@ -194,13 +194,62 @@
     display: block;
   }
 }
+
+header .logo img {
+  height: 40px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .button {
+    margin-top: 10px;
+  }
+}
+.hamburger-wrapper {
+  position: relative;
+  margin-left: auto;
+  padding-left: 10px;
+}
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu li {
+    margin-left: 15px;
+  }
+}
+
+
+.contact-button {
+  order: 3;
+}
+@media (max-width: 768px) {
+  .contact-button {
+    align-self: center;
+    margin: 10px 0;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .contact-button {
+    margin-left: 40px;
+  }
+}
+
 </style>
 </head>
 <body>
 <header>
-<div class="logo">🛋️ CHIAMAFRANCO.</div>
-<a class="button" href="#contact">Contattaci</a>
-
+<div class="logo"> <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px; max-width: 100%;"/> </div>
 <div class="hamburger-wrapper">
 <input id="menu-toggle" type="checkbox"/>
 <label class="menu-icon" for="menu-toggle">
@@ -213,6 +262,7 @@
 <li><a href="#contatti">Contatti</a></li>
 </ul>
 </div>
+<a class="button contact-button" href="#contact">Contattaci</a>
 </header>
 <section class="hero-section">
 <div class="hero-text">
