@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiamafranco - Il tuo tuttofare</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #1b1b1b;
+    }
+    header {
+      background: #0b0baf;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    header .button {
+      background-color: #ffc83d;
+      color: black;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      background: linear-gradient(to bottom right, #0011a8, #0b41df);
+      color: white;
+      padding: 60px 20px;
+      align-items: center;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .hero-text a {
+      background-color: #ffc83d;
+      color: black;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .services {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .services h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .service-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .service-box {
+      flex: 1 1 250px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .service-box img {
+      width: 100%;
+      height: auto;
+    }
+    .service-box button {
+      margin-top: -30px;
+      background-color: #ffc83d;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .service-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+    .service-details div {
+      flex: 1 1 250px;
+      margin: 10px;
+    }
+    .service-details h3 {
+      font-size: 1.2em;
+    }
+    .service-details p, .service-details ul {
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛋️ CHIAMAFRANCO.</div>
+    <a href="#contact" class="button">Contattaci</a>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
+      <p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
+      <a href="#preventivo">Chiedi preventivo</a>
+    </div>
+    <div class="hero-image">
+      <img src="image.png" alt="Servizi Chiamafranco">
+    </div>
+  </section>
+
+  <section class="services">
+    <h2>I nostri servizi</h2>
+    <div class="service-boxes">
+      <div class="service-box">
+        <img src="sgomberi.png" alt="Sgomberi">
+        <button>OTTIENI PREVENTIVO</button>
+      </div>
+      <div class="service-box">
+        <img src="imbiancatura.png" alt="Imbiancatura">
+        <button>OTTIENI PREVENTIVO</button>
+      </div>
+      <div class="service-box">
+        <img src="montaggio.png" alt="Montaggio Mobili">
+        <button>OTTIENI PREVENTIVO</button>
+      </div>
+      <div class="service-box">
+        <img src="traslochi.png" alt="Traslochi">
+        <button>OTTIENI PREVENTIVO</button>
+      </div>
+    </div>
+
+    <div class="service-details">
+      <div>
+        <h3>Sgomberi (appartamenti e uffici)</h3>
+        <p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
+        <p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma.</p>
+        <ul>
+          <li>✓ Sgombero rapido e pulito</li>
+          <li>✓ Smaltimento mobili ed elettrodomestici a norma</li>
+          <li>✓ Cantine, garage, uffici, appartamenti, negozi</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Imbiancatura interni ed esterni</h3>
+        <p>🖌️ <strong>Dai nuova vita ai tuoi ambienti!</strong></p>
+        <p>Servizio preciso e pulito, con materiali di qualità e attenzione ai dettagli.</p>
+        <ul>
+          <li>✓ Imbiancatura di interni ed esterni</li>
+          <li>✓ Pareti uniformi e senza imperfezioni</li>
+          <li>✓ Lavoro rapido e senza sporcare</li>
+          <li>✓ Consulenza su colori e finiture</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Montaggio e smontaggio mobili</h3>
+        <p>🔧 <strong>Precisione e rapidità garantite!</strong></p>
+        <p>Ci occupiamo di smontaggio e montaggio con precisione e professionalità.</p>
+        <ul>
+          <li>✓ IKEA, Mondo Convenienza, Leroy Merlin, ecc.</li>
+          <li>✓ Montaggio su misura con precisione</li>
+          <li>✓ Servizio rapido e senza pensieri</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Traslochi nazionali e internazionali</h3>
+        <p>📦 <strong>Devi traslocare? Ci pensiamo noi!</strong></p>
+        <p>Servizio rapido, sicuro e professionale, con massima cura per i tuoi beni.</p>
+        <ul>
+          <li>✓ Smontaggio e rimontaggio mobili</li>
+          <li>✓ Trasporto veloce e senza danni</li>
+          <li>✓ Protezione per oggetti fragili</li>
+        </ul>
+      </div>
+    </div>
+   </section>
+
+  <section class="intro-section" style="padding: 0px 20px;">
+    <div style="flex: 1; padding: 20px;">
+      <h2 style="font-size: 2em; margin-bottom: 20px;">Diamo forma ai tuoi progetti</h2>
+      <p style="font-size: 1.1em; line-height: 1.6;">
+        Chiamafranco offre <strong>traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia</strong>, garantendo qualità e affidabilità per privati e aziende.
+      </p>
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <img src="intro.png" alt="Team al lavoro" style="max-width: 100%; border-radius: 10px;">
+    </div>
+  </section>
+
+  <section class="perche-section" style="padding: 60px 20px; background-color: #f9f8ff;">
+  <h2 style="text-align: center; font-size: 2em; margin-bottom: 40px;">Perché scegliere Chiamafranco?</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+      <img src="icon-preventivi.png" alt="Preventivi" style="height: 50px; margin-bottom: 15px;">
+      <h3>Preventivi trasparenti</h3>
+      <p>Preventivi trasparenti e personalizzati, senza costi nascosti. Ti offriamo un servizio su misura al giusto prezzo.</p>
+    </div>
+    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+      <img src="icon-personale.png" alt="Personale" style="height: 50px; margin-bottom: 15px;">
+      <h3>Personale qualificato</h3>
+      <p>Professionisti esperti al tuo servizio: gestiamo ogni fase del trasloco, dall’imballaggio al montaggio, con cura e competenza.</p>
+    </div>
+    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+      <img src="icon-puntualita.png" alt="Puntualità" style="height: 50px; margin-bottom: 15px;">
+      <h3>Puntualità e precisione</h3>
+      <p>Rispettiamo i tempi concordati e curiamo ogni fase con precisione, per un trasloco senza stress e sempre puntuale.</p>
+    </div>
+    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+      <img src="icon-assicurazione.png" alt="Assicurazione" style="height: 50px; margin-bottom: 15px;">
+      <h3>Copertura assicurativa</h3>
+      <p>Ogni trasloco è assicurato, garantendo la massima sicurezza e protezione per i tuoi beni in ogni situazione.</p>
+    </div>
+  </div>
+</section>
+
+  <section class="testimonianza" style="background-color: #f6f3fa; text-align: center; padding: 60px 20px;">
+    <img src="testimonial-icon.png" alt="Testimonianza" style="height: 60px; margin-bottom: 20px;" />
+    <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em; color: #4a4a4a;">
+      Servizio puntuale e professionale! Il team di <strong>Chiamafranco</strong> ha montato i miei mobili con precisione e cura, lasciando tutto in ordine. <strong>Super consigliati!</strong>
+    </p>
+    <p style="margin-top: 20px; font-weight: bold; color: #4a4a4a;">Elena R.</p>
+  </section>
+
+  <section class="cta-preventivo" style="background: linear-gradient(to bottom right, #0011a8, #0b41df); color: white; text-align: center; padding: 80px 20px;">
+    <h2 style="font-size: 2.5em; margin-bottom: 30px;">Richiedi subito il tuo preventivo</h2>
+    <a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 15px 30px; border-radius: 40px; font-weight: bold; font-size: 1.1em; text-decoration: none; margin-bottom: 20px;">Chiedi preventivo</a>
+    <p style="margin: 20px 0; font-size: 1.2em; font-weight: bold;">Oppure</p>
+    <a href="https://wa.me/393475011844" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1.1em; text-decoration: none;">
+      💬 Chat su WhatsApp
+    </a>
+  </section>
+
+  <footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+<div>
+<h3 style="color: #3d3d3d;">chiamafranco</h3>
+<p>Indirizzo: V. Ardengo Folperti, 35 - Pavia, 27100</p>
+<p>Telefono: <a href="tel:+393475011844" style="color: #0b41df; text-decoration: none;">+39 347 501 1844</a></p>
+<p>📧 Email: <a href="mailto:info@chiamafranco.com" style="color: #0b41df; text-decoration: none;">info@chiamafranco.com</a></p>
+</div>
+<div>
+<h3 style="color: #3d3d3d;">📍 CHIAMAFRANCO</h3>
+<em>"Affidabilità e professionalità per i tuoi progetti"</em>
+<p style="margin-top: 10px;"><strong>🔷 I Nostri Servizi</strong><br/>
+          🚛 Traslochi | 📦 Sgomberi | 🛠️ Montaggio Mobili | 🎨 Imbiancatura</p>
+</div>
+<div>
+<h3 style="color: #3d3d3d;">📩 RICHIEDI UN PREVENTIVO VELOCE!</h3>
+<a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none;">Invia Richiesta</a>
+</div>
+</div>
+<div style="margin-top: 30px; text-align: center; border-top: 1px solid #ddd; padding-top: 20px;">
+<a href="#servizi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Servizi</a>
+<a href="#chisiamo" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Chi siamo</a>
+<a href="#recensioni" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Recensioni</a>
+<a href="#perchenoi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Perché noi</a>
+<a href="#contatti" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Contatti</a>
+<p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
+</div>
+</footer>
+</body>
+</html>
