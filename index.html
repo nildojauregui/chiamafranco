@@ -245,6 +245,22 @@ header .logo img {
   }
 }
 
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu a {
+  color: #0b41df;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
 </style>
 </head>
 <body>
@@ -417,5 +433,18 @@ header .logo img {
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.menu a');
+    const toggle = document.getElementById('menu-toggle');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
