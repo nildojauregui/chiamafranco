@@ -125,29 +125,74 @@
       font-size: 0.95em;
     }
   
+/* HAMBURGER MENU */
+.hamburger-wrapper {
+  position: relative;
+  margin-left: auto;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 30px;
+}
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.menu-icon .navicon:before {
+  top: 8px;
+}
+.menu-icon .navicon:after {
+  top: -8px;
+}
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked + .menu-icon .navicon {
+  background: transparent;
+}
+#menu-toggle:checked + .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+#menu-toggle:checked + .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+.menu {
+  display: none;
+  list-style: none;
+  background: white;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+#menu-toggle:checked ~ .menu {
+  display: block;
+}
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
   }
-  nav.menu {
-    display: none;
-  }
-  #menu-toggle:checked + .menu-icon + nav.menu {
-    display: flex;
-  }
-  .service-boxes {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-.service-box img {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.service-box button {
-  margin-top: 10px;
-  font-size: 1em;
-  padding: 12px 20px;
 }
 </style>
 </head>
@@ -156,16 +201,18 @@
 <div class="logo">🛋️ CHIAMAFRANCO.</div>
 <a class="button" href="#contact">Contattaci</a>
 
-<input id="menu-toggle" style="display: none;" type="checkbox"/>
-<label class="menu-icon" for="menu-toggle" style="display: none; cursor: pointer;">
-<span style="font-size: 2em;">☰</span>
+<div class="hamburger-wrapper">
+<input id="menu-toggle" type="checkbox"/>
+<label class="menu-icon" for="menu-toggle">
+<span class="navicon"></span>
 </label>
-<nav class="menu" style="display: none; flex-direction: column; background-color: white; position: absolute; top: 80px; left: 0; right: 0; z-index: 1000;">
-<a href="#chisiamo" style="padding: 15px; border-bottom: 1px solid #ccc;">Chi siamo</a>
-<a href="#recensioni" style="padding: 15px; border-bottom: 1px solid #ccc;">Recensioni</a>
-<a href="#perchenoi" style="padding: 15px; border-bottom: 1px solid #ccc;">Perché noi</a>
-<a href="#contatti" style="padding: 15px;">Contatti</a>
-</nav>
+<ul class="menu">
+<li><a href="#chisiamo">Chi siamo</a></li>
+<li><a href="#recensioni">Recensioni</a></li>
+<li><a href="#perchenoi">Perché noi</a></li>
+<li><a href="#contatti">Contatti</a></li>
+</ul>
+</div>
 </header>
 <section class="hero-section">
 <div class="hero-text">
