@@ -186,9 +186,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   border-radius: 8px;
 }
-#menu-toggle:checked ~ ul.menu {
-  display: block;
-}
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -285,7 +283,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    height: 60px;
   }
 
   .hamburger-wrapper {
@@ -388,6 +386,14 @@ header {
     text-align: center;
     border-bottom: 1px solid #eee;
   }
+}
+
+
+.menu {
+  display: none;
+}
+.menu.menu--visible {
+  display: block;
 }
 
 </style>
@@ -573,6 +579,25 @@ header {
         toggle.checked = false;
       });
     });
+  });
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('ul.menu');
+
+    function updateMenuVisibility() {
+      if (menuToggle.checked) {
+        menu.classList.add('menu--visible');
+      } else {
+        menu.classList.remove('menu--visible');
+      }
+    }
+
+    menuToggle.addEventListener('change', updateMenuVisibility);
+    updateMenuVisibility(); // inizializza
   });
 </script>
 
