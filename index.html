@@ -625,24 +625,17 @@ header {
 </div>
 </footer>
 
-
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const toggle = document.getElementById('menu-toggle');
-    const menuIcon = document.querySelector('.menu-icon');
     const links = document.querySelectorAll('.menu a');
-
+    const toggle = document.getElementById('menu-toggle');
     links.forEach(link => {
       link.addEventListener('click', () => {
         toggle.checked = false;
       });
     });
-
-    menuIcon.addEventListener('click', () => {
-      // toggle.checked is automatically handled by checkbox logic, nothing needed unless animation logic is added
-    });
   });
 </script>
 
 </body>
+</html>
