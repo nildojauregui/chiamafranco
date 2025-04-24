@@ -571,6 +571,32 @@ header {
     background: #fff;
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle:checked + label + ul.menu {
+    display: block !important;
+    position: fixed !important;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 9999;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+
+  ul.menu li {
+    padding: 15px;
+    text-align: center;
+  }
+
+  ul.menu a {
+    display: block;
+    font-weight: bold;
+    color: #0b41df;
+    text-decoration: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -587,8 +613,6 @@ header {
 <li><a href="#contatti">Contatti</a></li>
 </ul>
 </div>
-
-
 <a class="button contact-button" href="#contact">Contattaci</a>
 </header>
 <section class="hero-section">
