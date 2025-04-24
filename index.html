@@ -597,6 +597,20 @@ header {
     text-decoration: none;
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle:checked + label + ul.menu {
+    display: block !important;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 9999;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+}
 </style>
 </head>
 <body>
@@ -779,22 +793,6 @@ header {
     });
   });
 </script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('ul.menu');
 
-    function updateMenuVisibility() {
-      if (menuToggle.checked) {
-        menu.classList.add('menu--visible');
-      } else {
-        menu.classList.remove('menu--visible');
-      }
-    }
-
-    menuToggle.addEventListener('change', updateMenuVisibility);
-    updateMenuVisibility(); // inizializza
-  });
-</script>
 </body>
 </html>
