@@ -598,18 +598,8 @@ header {
   }
 }
 
-@media (max-width: 768px) {
-  #menu-toggle:checked + label + ul.menu {
-    display: block !important;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 9999;
-    padding: 10px 0;
-    border-top: 1px solid #ccc;
-  }
+#menu-toggle:checked + label + ul.menu {
+  display: block !important;
 }
 </style>
 </head>
@@ -782,17 +772,7 @@ header {
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.menu a');
-    const toggle = document.getElementById('menu-toggle');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-      });
-    });
-  });
-</script>
+
 
 </body>
 </html>
