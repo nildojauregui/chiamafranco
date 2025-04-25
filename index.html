@@ -867,101 +867,32 @@ header {
 }
 
 @media (max-width: 768px) {
-  /* Contenitore principale dell'header */
   .header-container {
-    display: flex;            /* Usa Flexbox per layout orizzontale */
-    flex-direction: row;      /* Assicura la disposizione in riga */
-    align-items: center;      /* Allinea verticalmente gli elementi al centro */
-    justify-content: space-between; /* Distribuisce lo spazio tra gli elementi */
-    padding: 10px 20px;       /* Padding interno */
-    position: relative;       /* Necessario per il posizionamento assoluto del menu */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
   }
 
-  /* Logo */
   .logo {
-    order: 1;                 /* Primo elemento (sinistra) */
-    flex-basis: auto;         /* Larghezza basata sul contenuto */
-    flex-grow: 0;             /* Non deve espandersi */
-    flex-shrink: 0;           /* Non deve restringersi */
+    order: 1;
+    flex: 1;
+    text-align: left;
   }
 
-  /* Wrapper per menu e bottone */
-  .menu-wrapper {
-    order: 2;                 /* Secondo elemento (centro) */
-    display: flex;            /* Usa Flexbox anche qui */
-    justify-content: center;  /* Centra il suo contenuto (il bottone) */
-    flex-grow: 1;             /* Permette al wrapper di occupare spazio per centrare il bottone */
-  }
-
-  /* Bottone Contattaci (dentro il wrapper) */
-  .menu-wrapper .contact-button {
-    display: inline-block;    /* Assicura che sia visibile */
-    margin: 0;                /* Rimuove margini precedenti che potrebbero interferire */
-    padding: 10px 20px;       /* Padding del bottone */
-    border-radius: 25px;      /* Smussa angoli */
-    font-size: 0.9em;         /* Dimensione font leggermente ridotta */
-    white-space: nowrap;      /* Evita che il testo vada a capo */
-    /* Il bottone verrà centrato dal justify-content del .menu-wrapper */
-  }
-
-  /* Icona Hamburger (Label) */
-  label.menu-icon {
-    order: 3;                 /* Terzo elemento (destra) */
-    display: block;           /* Rende visibile l'icona */
-    cursor: pointer;          /* Cambia il cursore */
-    padding: 10px;            /* Padding per cliccabilità */
-    flex-basis: auto;
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-
-  /* Nascondi la navigazione desktop dentro il wrapper su mobile */
-  .menu-wrapper .navigation {
-    display: none;
-  }
-
-  /* Nascondi l'ul.menu di default su mobile */
-  .menu {
-     display: none;
-  }
-
-  /* Mostra il menu quando l'input #menu-toggle è checkato */
-  /* NOTA: Il selettore potrebbe dover essere aggiustato se la struttura HTML è diversa */
-  #menu-toggle:checked + label.menu-icon + .menu-wrapper .menu {
-    display: block;           /* Mostra il menu */
-    position: absolute;       /* Posizionamento assoluto per overlay */
-    top: 60px;                /* Posiziona sotto l'header (aggiusta se necessario) */
-    left: 0;
-    width: 100%;              /* Larghezza piena */
-    background-color: white;  /* Sfondo bianco */
-    z-index: 100;             /* Sopra altri elementi */
-    border-top: 1px solid #eee; /* Separatore */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombra */
-  }
-
-  /* Stile per gli elementi del menu aperto */
-  #menu-toggle:checked + label.menu-icon + .menu-wrapper .menu li {
-    padding: 15px;
+  .contact-button {
+    order: 2;
+    flex: 1;
     text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-   #menu-toggle:checked + label.menu-icon + .menu-wrapper .menu li:last-child {
-     border-bottom: none;
-   }
-
-  #menu-toggle:checked + label.menu-icon + .menu-wrapper .menu li a {
-    color: #0b41df;
-    font-weight: bold;
-    text-decoration: none;
-    display: block;
-    padding: 10px 0;
+    margin: 0 auto;
   }
 
-   /* Assicurati che l'icona hamburger sia visibile */
-  .menu-icon .navicon,
-  .menu-icon .navicon:before,
-  .menu-icon .navicon:after {
-    background: #fff; /* Colore delle linee hamburger (bianco) */
+  .hamburger-wrapper {
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -977,8 +908,6 @@ header {
 <label class="menu-icon" for="menu-toggle">
 <span class="navicon"></span>
 </label>
-
-
 <div class="menu-wrapper"><nav class="navigation">
 <ul class="menu">
 <li><a href="#chisiamo">Chi siamo</a></li>
