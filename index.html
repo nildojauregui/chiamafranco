@@ -920,13 +920,13 @@ header {
 </header>
 <header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
 <div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
-<div style="text-align: left;">
-<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
-</div>
-<div style="text-align: center;">
+<div style="flex: 1; text-align: left;">
 <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
 </div>
-<div style="text-align: right;">
+<div style="flex: 1; text-align: center;">
+<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
+</div>
+<div style="flex: 1; text-align: right;">
 <input id="menu-toggle" style="display: none;" type="checkbox"/>
 <label class="menu-icon" for="menu-toggle" style="cursor: pointer; display: inline-block;">
 <span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
@@ -948,7 +948,8 @@ header {
     display: none !important;
   }
   .header-mobile {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
   }
   #menu-toggle:checked + label + ul.menu-mobile {
     display: flex !important;
