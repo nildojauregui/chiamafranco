@@ -927,17 +927,12 @@ header {
 }
 
 @media (max-width: 768px) {
-  .header-desktop {
-    display: none !important;
-  }
-  .header-mobile {
-    display: flex !important;
-  }
+  .header-desktop { display: none !important; }
+  .header-mobile { display: flex !important; }
 }
 @media (min-width: 769px) {
-  .header-mobile {
-    display: none !important;
-  }
+  .header-desktop { display: flex !important; }
+  .header-mobile { display: none !important; }
 }
 </style>
 </head>
@@ -998,17 +993,7 @@ header {
   }
 }
 </style>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.querySelector('.menu-mobile');
-  if (toggle && menu) {
-    toggle.addEventListener('change', function () {
-      menu.style.display = this.checked ? 'flex' : 'none';
-    });
-  }
-});
-</script>
+
 <section class="hero-section">
 <div class="hero-text">
 <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
@@ -1162,34 +1147,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.menu a');
-    const toggle = document.getElementById('menu-toggle');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-      });
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('ul.menu');
 
-    function updateMenuVisibility() {
-      if (menuToggle.checked) {
-        menu.classList.add('menu--visible');
-      } else {
-        menu.classList.remove('menu--visible');
-      }
-    }
 
-    menuToggle.addEventListener('change', updateMenuVisibility);
-    updateMenuVisibility(); // inizializza
-  });
-</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('menu-toggle');
@@ -1200,5 +1160,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-</script></body>
+</script>
+</body>
 </html>
