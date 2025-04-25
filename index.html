@@ -897,92 +897,46 @@ header {
 }
 
 
-@media (max-width: 768px) {
-  .header-mobile .header-wrapper {
-    display: flex !important;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .header-mobile .header-wrapper > div {
-    flex: 1;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(1) {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(2) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(3) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .header-mobile .header-wrapper img {
-    height: 40px;
-    margin-left: 0 !important;
-  }
-
-  .header-mobile .contact-button {
-    margin: 0 auto;
-  }
-}
-
 @media (min-width: 769px) {
   .header-desktop > div {
     max-width: 1280px;
     margin: auto;
-    padding-left: 10px;
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding-left: 0 !important;
+    padding-right: 20px !important;
   }
 
   .header-desktop > div > div:first-child {
-    flex: 1;
-    text-align: left;
-    margin-right: 50px;
-  }
-
-  .header-desktop nav {
-    flex: 2;
-    text-align: center;
+    margin-right: 60px !important;
+    padding-left: 0 !important;
   }
 
   .header-desktop nav ul {
     display: flex !important;
-    justify-content: center;
     flex-wrap: nowrap !important;
     gap: 30px !important;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  }
+
+  .header-desktop nav ul li {
+    white-space: nowrap !important;
   }
 
   .header-desktop nav ul li a {
-    white-space: nowrap;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+    display: inline-block !important;
+    white-space: nowrap !important;
   }
+}
 
-  .header-desktop > div > div:last-child {
-    flex: 1;
-    text-align: right;
+@media (max-width: 768px) {
+  .header-desktop {
+    display: none !important;
+  }
+  .header-mobile {
+    display: flex !important;
+  }
+}
+@media (min-width: 769px) {
+  .header-mobile {
+    display: none !important;
   }
 }
 </style>
@@ -1005,8 +959,7 @@ header {
 <a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold;">Contattaci</a>
 </div>
 </div>
-</header>
-<header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
+</header><header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
 <div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
 <div style="flex: 1; text-align: left;">
 <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
@@ -1030,6 +983,7 @@ header {
 <li><a href="#contatti" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Contatti</a></li>
 </ul>
 </header>
+
 <style>
 @media (max-width: 768px) {
   .header-desktop {
@@ -1236,5 +1190,15 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMenuVisibility(); // inizializza
   });
 </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script></body>
 </html>
