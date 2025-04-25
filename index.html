@@ -897,84 +897,12 @@ header {
 }
 
 
-@media (min-width: 769px) {
-  .header-desktop > div {
-    max-width: 1280px;
-    margin: auto;
-    padding-left: 0 !important;
-    padding-right: 20px !important;
-  }
-
-  .header-desktop > div > div:first-child {
-    margin-right: 60px !important;
-    padding-left: 0 !important;
-  }
-
-  .header-desktop nav ul {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 30px !important;
-  }
-
-  .header-desktop nav ul li {
-    white-space: nowrap !important;
-  }
-
-  .header-desktop nav ul li a {
-    display: inline-block !important;
-    white-space: nowrap !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-desktop { display: none !important; }
-  .header-mobile { display: flex !important; }
-}
-@media (min-width: 769px) {
-  .header-desktop { display: flex !important; }
-  .header-mobile { display: none !important; }
-}
-
-@media (max-width: 768px) {
-  .header-mobile .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(1) {
-    text-align: left;
-    justify-content: flex-start;
-    display: flex;
-    flex: 1;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(2) {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-    flex: 1;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(3) {
-    text-align: right;
-    justify-content: flex-end;
-    display: flex;
-    flex: 1;
-  }
-
-  .header-mobile .contact-button {
-    margin: 0 auto;
-  }
-}
-
 @media (max-width: 768px) {
   .header-mobile .header-wrapper {
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 15px;
   }
 
   .header-mobile .header-wrapper > div:nth-child(1) {
@@ -995,16 +923,17 @@ header {
     align-items: center;
   }
 
-  .header-mobile .contact-button {
-    margin: 0 auto;
+  .header-mobile img {
+    height: 40px;
   }
 
-  .menu-mobile {
-    flex-direction: column;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  .header-mobile .contact-button {
+    padding: 8px 16px;
+    background-color: #ffc83d;
+    border-radius: 30px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
   }
 }
 </style>
@@ -1027,7 +956,8 @@ header {
 <a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold;">Contattaci</a>
 </div>
 </div>
-</header><header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
+</header>
+<header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
 <div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
 <div style="flex: 1; text-align: left;">
 <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
@@ -1065,6 +995,17 @@ header {
   }
 }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script>
 <section class="hero-section">
 <div class="hero-text">
 <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
@@ -1219,15 +1160,32 @@ header {
 </div>
 </footer>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const toggle = document.getElementById('menu-toggle');
-  const menu = document.querySelector('.menu-mobile');
-  if (toggle && menu) {
-    toggle.addEventListener('change', function () {
-      menu.style.display = this.checked ? 'flex' : 'none';
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.menu a');
+    const toggle = document.getElementById('menu-toggle');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+      });
     });
-  }
-});
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('ul.menu');
+
+    function updateMenuVisibility() {
+      if (menuToggle.checked) {
+        menu.classList.add('menu--visible');
+      } else {
+        menu.classList.remove('menu--visible');
+      }
+    }
+
+    menuToggle.addEventListener('change', updateMenuVisibility);
+    updateMenuVisibility(); // inizializza
+  });
 </script>
 </body>
 </html>
