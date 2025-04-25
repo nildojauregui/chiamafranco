@@ -962,6 +962,47 @@ header {
   font-size: 18px;
   padding: 12px 0;
 }
+
+@media (max-width: 768px) {
+  .header-mobile .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(1) {
+    margin-left: 10px !important;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(2) {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+
+  .header-mobile .contact-button {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  .menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    z-index: 9999;
+  }
+
+  #menu-toggle:checked ~ .menu-mobile {
+    display: flex;
+  }
+}
 </style>
 <style>
     body {
@@ -1966,7 +2007,6 @@ header {
   }
 }
 </style>
-
 <section class="hero-section">
 <div class="hero-text">
 <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
@@ -2122,7 +2162,6 @@ header {
 </footer>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("menu-toggle");
@@ -2130,11 +2169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (toggle && menu) {
     toggle.addEventListener("change", function () {
-      if (this.checked) {
-        menu.classList.add("open");
-      } else {
-        menu.classList.remove("open");
-      }
+      menu.style.display = this.checked ? "flex" : "none";
     });
   }
 
@@ -2142,7 +2177,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       toggle.checked = false;
-      menu.classList.remove("open");
+      menu.style.display = "none";
     });
   }
 });
