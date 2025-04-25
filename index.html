@@ -919,16 +919,16 @@ header {
 </div>
 </header>
 <header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none;">
-<div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap;">
-<div class="logo" style="flex: 1; text-align: left;">
+<div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+<div style="text-align: left;">
+<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
+</div>
+<div style="text-align: center;">
 <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
 </div>
-<div class="contact-button-wrapper" style="text-align: center;">
-<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 10px 20px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
-</div>
-<div class="menu-toggle-wrapper" style="text-align: right;">
+<div style="text-align: right;">
 <input id="menu-toggle" style="display: none;" type="checkbox"/>
-<label class="menu-icon" for="menu-toggle" style="cursor: pointer; display: inline-block; margin-left: 20px;">
+<label class="menu-icon" for="menu-toggle" style="cursor: pointer; display: inline-block;">
 <span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
 <span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
 <span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
@@ -950,13 +950,24 @@ header {
   .header-mobile {
     display: block !important;
   }
-  #menu-toggle:checked + label + .menu-mobile {
+  #menu-toggle:checked + label + ul.menu-mobile {
     display: flex !important;
     flex-direction: column;
     gap: 10px;
   }
 }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script>
 
 <section class="hero-section">
 <div class="hero-text">
