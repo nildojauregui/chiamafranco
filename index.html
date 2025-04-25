@@ -896,10 +896,22 @@ header {
   }
 }
 
+
+
+@media (max-width: 768px) {
+  .header-mobile .header-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header-mobile .header-wrapper > div:first-child {
+    padding-left: 0;
+    margin-left: -8px;
+  }
+}
 </style>
 </head>
 <body>
-
 <header class="header-desktop" style="background: #0b0baf; color: white; padding: 15px 0;">
 <div style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
 <div style="flex: 1; text-align: left;">
@@ -967,7 +979,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 </script>
-
 <section class="hero-section">
 <div class="hero-text">
 <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
