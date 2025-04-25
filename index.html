@@ -896,6 +896,11 @@ header {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+}
 </style>
 </head>
 <body>
@@ -959,31 +964,15 @@ header {
 </style>
 
 <section class="hero-section">
-  <div class="hero-text">
-    <!-- Immagine visibile solo su mobile -->
-    <img src="img/b110c301-fab3-45ef-ad4e-4cf399f6c8e6.png" alt="Servizi Chiamafranco"
-         class="mobile-only" style="width: 120px; margin: 0 auto 20px;" />
-
-    <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
-
-    <p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia...</p>
-
-    <a href="#preventivo">Chiedi preventivo</a>
-  </div>
-
-  <div class="hero-image">
-    <!-- Immagine visibile solo su desktop -->
-    <img src="img/b110c301-fab3-45ef-ad4e-4cf399f6c8e6.png" alt="Servizi Chiamafranco" />
-  </div>
+<div class="hero-text">
+<h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
+<p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
+<a href="#preventivo">Chiedi preventivo</a>
+</div>
+<div class="hero-image">
+<img alt="Servizi Chiamafranco" src="image.png"/>
+</div>
 </section>
-
-<style>
-  @media (min-width: 769px) {
-    .mobile-only {
-      display: none !important;
-    }
-  }
-</style>
 <section class="services">
 <h2>I nostri servizi</h2>
 <div class="service-boxes">
