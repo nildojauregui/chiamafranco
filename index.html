@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chiamafranco - Il tuo tuttofare</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chiamafranco - Il tuo tuttofare</title>
+<style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -123,158 +124,1142 @@
     .service-details p, .service-details ul {
       font-size: 0.95em;
     }
-  </style>
+  
+/* HAMBURGER MENU */
+.hamburger-wrapper {
+  position: relative;
+  margin-left: auto;
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+.menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 30px;
+}
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.menu-icon .navicon:before {
+  top: 8px;
+}
+.menu-icon .navicon:after {
+  top: -8px;
+}
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked + .menu-icon .navicon {
+  background: transparent;
+}
+#menu-toggle:checked + .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+#menu-toggle:checked + .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+.menu {
+  display: none;
+  list-style: none;
+  background: white;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+}
+
+header .logo img {
+  height: 40px;
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header .button {
+    margin-top: 10px;
+  }
+}
+.hamburger-wrapper {
+  position: relative;
+  margin-left: auto;
+  padding-left: 10px;
+}
+@media (min-width: 769px) {
+  .menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu li {
+    margin-left: 15px;
+  }
+}
+
+
+.contact-button {
+  order: 2;
+}
+
+
+
+@media (min-width: 769px) {
+  .contact-button {
+    margin-left: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu a {
+  color: #0b41df;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+  }
+
+  .contact-button {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    align-items: center !important;
+  }
+  .logo,
+  .contact-button,
+  .hamburger-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-button {
+    order: 2;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-button {
+    order: 2;
+    flex: 1;
+    text-align: center;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu {
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    font-size: 1.2em;
+    padding: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .menu li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+
+.menu {
+  display: none;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+
+  .logo {
+    order: 1;
+    text-align: center;
+  }
+
+  .contact-button {
+    order: 2;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: auto;
+    display: inline-block;
+    border-radius: 30px;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    align-self: flex-end;
+    margin-top: -40px;
+    margin-right: 5px;
+  }
+
+  .menu {
+    width: 100vw;
+    top: 60px;
+    left: 0;
+    right: 0;
+    font-size: 1.2em;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+
+#menu-toggle:checked + label + ul.menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    position: relative;
+  }
+
+  .logo {
+    order: 1;
+    text-align: center;
+  }
+
+  .contact-button {
+    order: 2;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: auto;
+    display: inline-block;
+    border-radius: 30px;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .menu {
+    display: none;
+    width: 100vw;
+    background: white;
+    font-size: 1.2em;
+    top: 60px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 10;
+  }
+
+  .menu li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-icon .navicon {
+    background: #fff;
+  }
+  .menu-icon .navicon:before,
+  .menu-icon .navicon:after {
+    background: #fff;
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+  }
+
+  .contact-button {
+    order: 2;
+    flex: 1;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #fff;
+    font-size: 1.2em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .menu li {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu a {
+    color: #0b41df;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px 0;
+  }
+
+  .menu-icon .navicon,
+  .menu-icon .navicon:before,
+  .menu-icon .navicon:after {
+    background: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-toggle:checked + label + ul.menu {
+    display: block !important;
+    position: fixed !important;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 9999;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+
+  ul.menu li {
+    padding: 15px;
+    text-align: center;
+  }
+
+  ul.menu a {
+    display: block;
+    font-weight: bold;
+    color: #0b41df;
+    text-decoration: none;
+  }
+}
+
+/* Base */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: #0032e2;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-button {
+  background-color: #ffc83d;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Hamburger style */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 3px;
+  width: 30px;
+  position: relative;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 3px;
+  width: 30px;
+  position: absolute;
+}
+
+.menu-icon .navicon:before {
+  top: 8px;
+}
+
+.menu-icon .navicon:after {
+  top: -8px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+    border-top: 1px solid #ddd;
+  }
+
+  #menu-toggle:checked + label + nav .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  .contact-button {
+    margin: 10px auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .navigation {
+    justify-self: center;
+  }
+
+  .menu {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0032e2;
+  }
+
+  .contact-button {
+    background-color: #ffc83d;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 769px) {
+  header {
+    width: 100%;
+    background-color: #0000aa;
+  }
+
+  .header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0032e2;
+  }
+
+  .contact-button {
+    background-color: #ffc83d;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row-reverse;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 15px 30px;
+  }
+
+  .menu-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    list-style: none;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0032e2;
+  }
+
+  .contact-button {
+    background-color: #ffc83d;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    order: 1;
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-button {
+    order: 2;
+    flex: 1;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hamburger-wrapper {
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header-mobile .header-wrapper {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header-mobile .header-wrapper > div {
+    flex: 1;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(1) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper img {
+    height: 40px;
+    margin-left: 0 !important;
+  }
+
+  .header-mobile .contact-button {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .header-desktop > div {
+    max-width: 1280px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-desktop > div > div:first-child {
+    flex: 1;
+    text-align: left;
+    margin-right: 50px;
+  }
+
+  .header-desktop nav {
+    flex: 2;
+    text-align: center;
+  }
+
+  .header-desktop nav ul {
+    display: flex !important;
+    justify-content: center;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header-desktop nav ul li a {
+    white-space: nowrap;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  .header-desktop > div > div:last-child {
+    flex: 1;
+    text-align: right;
+  }
+}
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  .hero-image {
+    order: -1; /* Fa andare l'immagine sopra il testo */
+  }
+}
+
+.mobile-service-box {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+.mobile-service-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.mobile-service-box h3 {
+  margin-top: 20px;
+  font-size: 1.4em;
+}
+.mobile-service-box p,
+.mobile-service-box ul {
+  text-align: left;
+  font-size: 1em;
+}
+.mobile-service-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+.mobile-service-box ul li::before {
+  content: "✔ ";
+  color: #0b0baf;
+}
+.btn-yellow {
+  display: inline-block;
+  background-color: #ffc83d;
+  color: black;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 30px;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+/* SOLO MOBILE */
+@media (max-width: 768px) {
+  .service-boxes,
+  .service-details {
+    display: none !important;
+  }
+  .mobile-service-box {
+    display: block;
+  }
+}
+
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo">🛋️ CHIAMAFRANCO.</div>
-    <a href="#contact" class="button">Contattaci</a>
-  </header>
-
-  <section class="hero-section">
-    <div class="hero-text">
-      <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
-      <p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
-      <a href="#preventivo">Chiedi preventivo</a>
-    </div>
-    <div class="hero-image">
-      <img src="image.png" alt="Servizi Chiamafranco">
-    </div>
-  </section>
-
-<section class="services" id="servizi">
-  <h2>I nostri servizi</h2>
-
-  <!-- SGOMBERI -->
-  <div class="custom-service-box">
-    <div class="custom-service-image">
-      <img src="sgomberi.png" alt="Sgomberi Appartamenti e Uffici">
-      <a class="custom-service-btn" href="#preventivo">OTTIENI PREVENTIVO</a>
-    </div>
-    <div class="custom-service-text">
-      <h3>Sgomberi (appartamenti e uffici)</h3>
-      <p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
-      <p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma, lasciando tutto pulito e in ordine.</p>
-      <ul>
-        <li>✔️ Sgombero rapido e pulito</li>
-        <li>✔️ Smaltimento mobili ed elettrodomestici a norma di legge</li>
-        <li>✔️ Cantine, garage, uffici, appartamenti, negozi</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- IMBIANCATURA -->
-  <div class="custom-service-box">
-    <div class="custom-service-image">
-      <img src="imbiancatura.png" alt="Imbiancatura Interni ed Esterni">
-      <a class="custom-service-btn" href="#preventivo">OTTIENI PREVENTIVO</a>
-    </div>
-    <div class="custom-service-text">
-      <h3>Imbiancatura interni ed esterni</h3>
-      <p>🎨 <strong>Dai nuova vita ai tuoi ambienti!</strong></p>
-      <p>Servizio preciso e pulito, con materiali di qualità e attenzione ai dettagli.</p>
-      <ul>
-        <li>✔️ Imbiancatura di interni ed esterni</li>
-        <li>✔️ Pareti uniformi e senza imperfezioni</li>
-        <li>✔️ Lavoro rapido e senza sporcare</li>
-        <li>✔️ Consulenza su colori e finiture</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- MONTAGGIO MOBILI -->
-  <div class="custom-service-box">
-    <div class="custom-service-image">
-      <img src="montaggio.png" alt="Montaggio e Smontaggio Mobili">
-      <a class="custom-service-btn" href="#preventivo">OTTIENI PREVENTIVO</a>
-    </div>
-    <div class="custom-service-text">
-      <h3>Montaggio e smontaggio mobili</h3>
-      <p>🛠️ <strong>Precisione e rapidità garantite!</strong></p>
-      <p>Ci occupiamo di smontaggio e montaggio con precisione e professionalità.</p>
-      <ul>
-        <li>✔️ IKEA, Mondo Convenienza, Leroy Merlin, ecc.</li>
-        <li>✔️ Montaggio su misura con precisione</li>
-        <li>✔️ Servizio rapido e senza pensieri</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- TRASLOCHI -->
-  <div class="custom-service-box">
-    <div class="custom-service-image">
-      <img src="traslochi.png" alt="Traslochi nazionali e internazionali">
-      <a class="custom-service-btn" href="#preventivo">OTTIENI PREVENTIVO</a>
-    </div>
-    <div class="custom-service-text">
-      <h3>Traslochi nazionali e internazionali</h3>
-      <p>📦 <strong>Devi traslocare? Ci pensiamo noi!</strong></p>
-      <p>Servizio rapido, sicuro e professionale, con massima cura per i tuoi beni.</p>
-      <ul>
-        <li>✔️ Smontaggio e rimontaggio mobili</li>
-        <li>✔️ Trasporto veloce e senza danni</li>
-        <li>✔️ Protezione per oggetti fragili</li>
-      </ul>
-    </div>
-  </div>
+<header class="header-desktop" style="background: #0b0baf; color: white; padding: 15px 0;">
+<div style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+<div style="flex: 1; text-align: left;">
+<img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
+</div>
+<nav style="flex: 2; text-align: center;">
+<ul style="list-style: none; display: flex; justify-content: center; gap: 20px; margin: 0; padding: 0;">
+<li><a href="#chisiamo" style="color: white; text-decoration: none; font-weight: bold;">Chi siamo</a></li>
+<li><a href="#recensioni" style="color: white; text-decoration: none; font-weight: bold;">Recensioni</a></li>
+<li><a href="#perchenoi" style="color: white; text-decoration: none; font-weight: bold;">Perché noi</a></li>
+<li><a href="#contatti" style="color: white; text-decoration: none; font-weight: bold;">Contatti</a></li>
+</ul>
+</nav>
+<div style="flex: 1; text-align: right;">
+<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: bold;">Contattaci</a>
+</div>
+</div>
+</header>
+<header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
+<div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+<div style="flex: 1; text-align: left;">
+<img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
+</div>
+<div style="flex: 1; text-align: center;">
+<a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
+</div>
+<div style="flex: 1; text-align: right;">
+<input id="menu-toggle" style="display: none;" type="checkbox"/>
+<label class="menu-icon" for="menu-toggle" style="cursor: pointer; display: inline-block;">
+<span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
+<span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
+<span style="background: white; height: 3px; width: 25px; display: block; margin: 5px 0;"></span>
+</label>
+</div>
+</div>
+<ul class="menu-mobile" style="display: none; list-style: none; padding: 20px; background: white; position: absolute; top: 70px; right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 10px; z-index: 9999; flex-direction: column; gap: 15px; width: 200px;">
+<li><a href="#chisiamo" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Chi siamo</a></li>
+<li><a href="#recensioni" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Recensioni</a></li>
+<li><a href="#perchenoi" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Perché noi</a></li>
+<li><a href="#contatti" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Contatti</a></li>
+</ul>
+</header>
+<style>
+@media (max-width: 768px) {
+  .header-desktop {
+    display: none !important;
+  }
+  .header-mobile {
+    display: flex !important;
+    flex-direction: column;
+  }
+  #menu-toggle:checked + label + ul.menu-mobile {
+    display: flex !important;
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script>
+<section class="hero-section">
+<div class="hero-text">
+<h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
+<p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
+<a href="#preventivo">Chiedi preventivo</a>
+</div>
+<div class="hero-image">
+<img alt="Servizi Chiamafranco" src="image.png"/>
+</div>
 </section>
+<section class="services">
+<h2>I nostri servizi</h2>
+<div class="service-boxes">
 
-  <section class="intro-section" style="padding: 0px 20px;">
-    <div style="flex: 1; padding: 20px;">
-      <h2 style="font-size: 2em; margin-bottom: 20px;">Diamo forma ai tuoi progetti</h2>
-      <p style="font-size: 1.1em; line-height: 1.6;">
-        Chiamafranco offre <strong>traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia</strong>, garantendo qualità e affidabilità per privati e aziende.
-      </p>
-    </div>
-    <div style="flex: 1; text-align: center;">
-      <img src="intro.png" alt="Team al lavoro" style="max-width: 100%; border-radius: 10px;">
-    </div>
-  </section>
-
-  <section class="perche-section" style="padding: 60px 20px; background-color: #f9f8ff;">
-  <h2 style="text-align: center; font-size: 2em; margin-bottom: 40px;">Perché scegliere Chiamafranco?</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
-    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-      <img src="icon-preventivi.png" alt="Preventivi" style="height: 50px; margin-bottom: 15px;">
-      <h3>Preventivi trasparenti</h3>
-      <p>Preventivi trasparenti e personalizzati, senza costi nascosti. Ti offriamo un servizio su misura al giusto prezzo.</p>
-    </div>
-    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-      <img src="icon-personale.png" alt="Personale" style="height: 50px; margin-bottom: 15px;">
-      <h3>Personale qualificato</h3>
-      <p>Professionisti esperti al tuo servizio: gestiamo ogni fase del trasloco, dall’imballaggio al montaggio, con cura e competenza.</p>
-    </div>
-    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-      <img src="icon-puntualita.png" alt="Puntualità" style="height: 50px; margin-bottom: 15px;">
-      <h3>Puntualità e precisione</h3>
-      <p>Rispettiamo i tempi concordati e curiamo ogni fase con precisione, per un trasloco senza stress e sempre puntuale.</p>
-    </div>
-    <div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-      <img src="icon-assicurazione.png" alt="Assicurazione" style="height: 50px; margin-bottom: 15px;">
-      <h3>Copertura assicurativa</h3>
-      <p>Ogni trasloco è assicurato, garantendo la massima sicurezza e protezione per i tuoi beni in ogni situazione.</p>
-    </div>
+<div class="service-boxes">
+  <div class="service-box">
+    <img src="sgomberi.png" alt="Sgomberi appartamenti e uffici">
+    <button>OTTIENI PREVENTIVO</button>
+    <h3>Sgomberi (appartamenti e uffici)</h3>
+    <p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
+    <p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma, lasciando tutto pulito e in ordine.</p>
   </div>
-</section>
 
-  <section class="testimonianza" style="background-color: #f6f3fa; text-align: center; padding: 60px 20px;">
-    <img src="testimonial-icon.png" alt="Testimonianza" style="height: 60px; margin-bottom: 20px;" />
-    <p style="max-width: 800px; margin: 0 auto; font-size: 1.2em; color: #4a4a4a;">
+  <div class="service-box">
+    <img src="imbiancatura.png" alt="Imbiancatura interni ed esterni">
+    <button>OTTIENI PREVENTIVO</button>
+    <h3>Imbiancatura interni ed esterni</h3>
+    <p>🖌️ <strong>Dai nuova vita ai tuoi ambienti!</strong></p>
+    <p>Servizio preciso e pulito, con materiali di alta qualità per una finitura impeccabile.</p>
+  </div>
+
+  <div class="service-box">
+    <img src="montaggio.png" alt="Montaggio e smontaggio mobili">
+    <button>OTTIENI PREVENTIVO</button>
+    <h3>Montaggio e smontaggio mobili</h3>
+    <p>🔧 <strong>Precisione e rapidità garantite!</strong></p>
+    <p>Ci occupiamo di smontaggio e montaggio con precisione e professionalità, per rendere facile il tuo trasloco o ristrutturazione.</p>
+  </div>
+
+  <div class="service-box">
+    <img src="traslochi.png" alt="Traslochi nazionali e internazionali">
+    <button>OTTIENI PREVENTIVO</button>
+    <h3>Traslochi nazionali e internazionali</h3>
+    <p>📦 <strong>Devi traslocare? Ci pensiamo noi!</strong></p>
+    <p>Servizio rapido, sicuro e professionale, con massima cura per i tuoi beni.</p>
+  </div>
+</div>
+
+<!-- Blocco Sgomberi -->
+<div class="mobile-service-box">
+  <img src="sgomberi.png" alt="Sgomberi appartamenti e uffici">
+  <a class="btn-yellow" href="#preventivo">OTTIENI PREVENTIVO</a>
+  <h3>Sgomberi (appartamenti e uffici)</h3>
+  <p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
+  <p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma, lasciando tutto pulito e in ordine.</p>
+  <ul>
+    <li>✔ Sgombero rapido e pulito</li>
+    <li>✔ Smaltimento mobili ed elettrodomestici a norma di legge</li>
+    <li>✔ Cantine, garage, uffici, appartamenti, negozi</li>
+  </ul>
+</div>
+
+<!-- Blocco Traslochi -->
+<div class="mobile-service-box">
+  <img src="traslochi.png" alt="Traslochi nazionali e internazionali">
+  <a class="btn-yellow" href="#preventivo">OTTIENI PREVENTIVO</a>
+  <h3>Traslochi nazionali e internazionali</h3>
+  <p>📦 <strong>Devi traslocare? Ci pensiamo noi!</strong></p>
+  <p>Servizio rapido, sicuro e professionale, con massima cura per i tuoi beni.</p>
+  <ul>
+    <li>✔ Smontaggio e rimontaggio mobili</li>
+    <li>✔ Trasporto veloce e senza danni</li>
+    <li>✔ Protezione per oggetti fragili</li>
+  </ul>
+</div>
+
+<!-- Blocco Montaggio Mobili -->
+<div class="mobile-service-box">
+  <img src="montaggio.png" alt="Montaggio e smontaggio mobili">
+  <a class="btn-yellow" href="#preventivo">OTTIENI PREVENTIVO</a>
+  <h3>Montaggio e smontaggio mobili</h3>
+  <p>🔧 <strong>Precisione e rapidità garantite!</strong></p>
+  <p>Ci occupiamo di smontaggio e montaggio con precisione e professionalità, per rendere facile il tuo trasloco o ristrutturazione.</p>
+  <ul>
+    <li>✔ Montaggio su misura con precisione</li>
+    <li>✔ Smontaggio e trasporto senza danni</li>
+    <li>✔ Service per IKEA, Mondo Convenienza, Leroy Merlin, ecc.</li>
+  </ul>
+</div>
+
+<!-- Blocco Imbiancatura -->
+<div class="mobile-service-box">
+  <img src="imbiancatura.png" alt="Imbiancatura interni ed esterni">
+  <a class="btn-yellow" href="#preventivo">OTTIENI PREVENTIVO</a>
+  <h3>Imbiancatura interni ed esterni</h3>
+  <p>🖌️ <strong>Dai nuova vita ai tuoi ambienti!</strong></p>
+  <p>Servizio preciso e pulito, con materiali di alta qualità per una finitura impeccabile.</p>
+  <ul>
+    <li>✔ Imbiancatura di interni ed esterni</li>
+    <li>✔ Pareti uniformi e senza imperfezioni</li>
+    <li>✔ Consulenza su colori e finiture</li>
+  </ul>
+</div>
+</section>
+<section class="perche-section" style="padding: 60px 20px; background-color: #f9f8ff;">
+<h2 style="text-align: center; font-size: 2em; margin-bottom: 40px;">Perché scegliere Chiamafranco?</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+<img alt="Preventivi" src="icon-preventivi.png" style="height: 50px; margin-bottom: 15px;"/>
+<h3>Preventivi trasparenti</h3>
+<p>Preventivi trasparenti e personalizzati, senza costi nascosti. Ti offriamo un servizio su misura al giusto prezzo.</p>
+</div>
+<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+<img alt="Personale" src="icon-personale.png" style="height: 50px; margin-bottom: 15px;"/>
+<h3>Personale qualificato</h3>
+<p>Professionisti esperti al tuo servizio: gestiamo ogni fase del trasloco, dall’imballaggio al montaggio, con cura e competenza.</p>
+</div>
+<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+<img alt="Puntualità" src="icon-puntualita.png" style="height: 50px; margin-bottom: 15px;"/>
+<h3>Puntualità e precisione</h3>
+<p>Rispettiamo i tempi concordati e curiamo ogni fase con precisione, per un trasloco senza stress e sempre puntuale.</p>
+</div>
+<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
+<img alt="Assicurazione" src="icon-assicurazione.png" style="height: 50px; margin-bottom: 15px;"/>
+<h3>Copertura assicurativa</h3>
+<p>Ogni trasloco è assicurato, garantendo la massima sicurezza e protezione per i tuoi beni in ogni situazione.</p>
+</div>
+</div>
+</section>
+<section class="testimonianza" style="background-color: #f6f3fa; text-align: center; padding: 60px 20px;">
+<img alt="Testimonianza" src="testimonial-icon.png" style="height: 60px; margin-bottom: 20px;"/>
+<p style="max-width: 800px; margin: 0 auto; font-size: 1.2em; color: #4a4a4a;">
       Servizio puntuale e professionale! Il team di <strong>Chiamafranco</strong> ha montato i miei mobili con precisione e cura, lasciando tutto in ordine. <strong>Super consigliati!</strong>
-    </p>
-    <p style="margin-top: 20px; font-weight: bold; color: #4a4a4a;">Elena R.</p>
-  </section>
-
-  <section class="cta-preventivo" style="background: linear-gradient(to bottom right, #0011a8, #0b41df); color: white; text-align: center; padding: 80px 20px;">
-    <h2 style="font-size: 2.5em; margin-bottom: 30px;">Richiedi subito il tuo preventivo</h2>
-    <a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 15px 30px; border-radius: 40px; font-weight: bold; font-size: 1.1em; text-decoration: none; margin-bottom: 20px;">Chiedi preventivo</a>
-    <p style="margin: 20px 0; font-size: 1.2em; font-weight: bold;">Oppure</p>
-    <a href="https://wa.me/393475011844" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1.1em; text-decoration: none;">
+</p>
+<p style="margin-top: 20px; font-weight: bold; color: #4a4a4a;">Elena R.</p>
+</section>
+<section class="cta-preventivo" style="background: linear-gradient(to bottom right, #0011a8, #0b41df); color: white; text-align: center; padding: 80px 20px;">
+<h2 style="font-size: 2.5em; margin-bottom: 30px;">Richiedi subito il tuo preventivo</h2>
+<a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 15px 30px; border-radius: 40px; font-weight: bold; font-size: 1.1em; text-decoration: none; margin-bottom: 20px;">Chiedi preventivo</a>
+<p style="margin: 20px 0; font-size: 1.2em; font-weight: bold;">Oppure</p>
+<a href="https://wa.me/393475011844" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1.1em; text-decoration: none;">
       💬 Chat su WhatsApp
     </a>
-  </section>
-
-  <footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
+</section>
+<footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
 <div>
 <h3 style="color: #3d3d3d;">chiamafranco</h3>
@@ -302,5 +1287,33 @@
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.menu a');
+    const toggle = document.getElementById('menu-toggle');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('ul.menu');
+
+    function updateMenuVisibility() {
+      if (menuToggle.checked) {
+        menu.classList.add('menu--visible');
+      } else {
+        menu.classList.remove('menu--visible');
+      }
+    }
+
+    menuToggle.addEventListener('change', updateMenuVisibility);
+    updateMenuVisibility(); // inizializza
+  });
+</script>
 </body>
 </html>
