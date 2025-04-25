@@ -1,1104 +1,546 @@
 <!DOCTYPE html>
-
 <html lang="it">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chiamafranco - Il tuo tuttofare</title>
-<style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #1b1b1b;
-    }
-    header {
-      background: #0b0baf;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    header .logo {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-    header .button {
-      background-color: #ffc83d;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .hero-section {
-      display: flex;
-      flex-wrap: wrap;
-      background: linear-gradient(to bottom right, #0011a8, #0b41df);
-      color: white;
-      padding: 60px 20px;
-      align-items: center;
-    }
-    .hero-text {
-      flex: 1;
-      padding: 20px;
-    }
-    .hero-text h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-    .hero-text p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-    .hero-text a {
-      background-color: #ffc83d;
-      color: black;
-      padding: 15px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .hero-image {
-      flex: 1;
-      text-align: center;
-    }
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .services {
-      padding: 60px 20px;
-      background: #fff;
-    }
-    .services h2 {
-      font-size: 2em;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .service-boxes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-    }
-    .service-box {
-      flex: 1 1 250px;
-      background: #f9f9f9;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    .service-box img {
-      width: 100%;
-      height: auto;
-    }
-    .service-box button {
-      margin-top: -30px;
-      background-color: #ffc83d;
-      color: #000;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .service-details {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      margin-top: 40px;
-    }
-    .service-details div {
-      flex: 1 1 250px;
-      margin: 10px;
-    }
-    .service-details h3 {
-      font-size: 1.2em;
-    }
-    .service-details p, .service-details ul {
-      font-size: 0.95em;
-    }
-  
-/* HAMBURGER MENU */
-.hamburger-wrapper {
-  position: relative;
-  margin-left: auto;
-}
-.menu-icon {
-  display: none;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 0;
-}
-.menu-icon .navicon {
-  background: white;
-  display: block;
-  height: 3px;
-  position: relative;
-  transition: background .2s ease-out;
-  width: 30px;
-}
-.menu-icon .navicon:before,
-.menu-icon .navicon:after {
-  background: white;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
-}
-.menu-icon .navicon:before {
-  top: 8px;
-}
-.menu-icon .navicon:after {
-  top: -8px;
-}
-#menu-toggle {
-  display: none;
-}
-#menu-toggle:checked + .menu-icon .navicon {
-  background: transparent;
-}
-#menu-toggle:checked + .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-  top: 0;
-}
-#menu-toggle:checked + .menu-icon .navicon:after {
-  transform: rotate(45deg);
-  top: 0;
-}
-.menu {
-  display: none;
-  list-style: none;
-  background: white;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-}
-
-header .logo img {
-  height: 40px;
-  max-width: 100%;
-}
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  header .button {
-    margin-top: 10px;
-  }
-}
-.hamburger-wrapper {
-  position: relative;
-  margin-left: auto;
-  padding-left: 10px;
-}
-@media (min-width: 769px) {
-  .menu {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-  }
-  .menu li {
-    margin-left: 15px;
-  }
-}
-
-
-.contact-button {
-  order: 2;
-}
-
-
-
-@media (min-width: 769px) {
-  .contact-button {
-    margin-left: 40px;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-}
-
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-.menu a {
-  color: #0b41df;
-  font-weight: bold;
-  display: block;
-  padding: 10px 0;
-  text-decoration: none;
-}
-
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    order: 1;
-    flex: 1;
-  }
-
-  .contact-button {
-    margin: 10px auto;
-    padding: 10px 20px;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header {
-    align-items: center !important;
-  }
-  .logo,
-  .contact-button,
-  .hamburger-wrapper {
-    display: flex;
-    align-items: center;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    position: relative;
-  }
-
-  .logo {
-    order: 1;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .contact-button {
-    order: 2;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    margin: 0;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: relative;
-  }
-
-  .logo {
-    order: 1;
-    flex: 1;
-    text-align: left;
-  }
-
-  .contact-button {
-    order: 2;
-    flex: 1;
-    text-align: center;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    flex: 1;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .menu {
-    width: 100vw;
-    top: 60px;
-    left: 0;
-    right: 0;
-    border-radius: 0;
-    font-size: 1.2em;
-    padding: 0;
-    background: #ffffff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-
-  .menu li {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-}
-
-
-.menu {
-  display: none;
-}
-
-
-
-
-
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-    gap: 10px;
-  }
-
-  .logo {
-    order: 1;
-    text-align: center;
-  }
-
-  .contact-button {
-    order: 2;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 1em;
-    height: auto;
-    display: inline-block;
-    border-radius: 30px;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    align-self: flex-end;
-    margin-top: -40px;
-    margin-right: 5px;
-  }
-
-  .menu {
-    width: 100vw;
-    top: 60px;
-    left: 0;
-    right: 0;
-    font-size: 1.2em;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .menu li {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-}
-
-
-#menu-toggle:checked + label + ul.menu {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-    gap: 10px;
-    position: relative;
-  }
-
-  .logo {
-    order: 1;
-    text-align: center;
-  }
-
-  .contact-button {
-    order: 2;
-    margin: 0 auto;
-    padding: 10px 20px;
-    font-size: 1em;
-    height: auto;
-    display: inline-block;
-    border-radius: 30px;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .menu {
-    display: none;
-    width: 100vw;
-    background: white;
-    font-size: 1.2em;
-    top: 60px;
-    left: 0;
-    right: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    z-index: 10;
-  }
-
-  .menu li {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-
-  .menu-icon .navicon {
-    background: #fff;
-  }
-  .menu-icon .navicon:before,
-  .menu-icon .navicon:after {
-    background: #fff;
-  }
-}
-
-
-@media (max-width: 768px) {
-  header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .logo {
-    order: 1;
-    flex: 1;
-  }
-
-  .contact-button {
-    order: 2;
-    flex: 1;
-    margin: 0 auto;
-    padding: 10px 20px;
-    border-radius: 25px;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    background: #fff;
-    font-size: 1.2em;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-  }
-
-  .menu li {
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-
-  .menu a {
-    color: #0b41df;
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    padding: 10px 0;
-  }
-
-  .menu-icon .navicon,
-  .menu-icon .navicon:before,
-  .menu-icon .navicon:after {
-    background: #fff;
-  }
-}
-
-@media (max-width: 768px) {
-  #menu-toggle:checked + label + ul.menu {
-    display: block !important;
-    position: fixed !important;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: white;
-    z-index: 9999;
-    padding: 10px 0;
-    border-top: 1px solid #ccc;
-  }
-
-  ul.menu li {
-    padding: 15px;
-    text-align: center;
-  }
-
-  ul.menu a {
-    display: block;
-    font-weight: bold;
-    color: #0b41df;
-    text-decoration: none;
-  }
-}
-
-/* Base */
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li a {
-  color: #0032e2;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.contact-button {
-  background-color: #ffc83d;
-  padding: 10px 20px;
-  border-radius: 30px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Hamburger style */
-#menu-toggle {
-  display: none;
-}
-
-.menu-icon {
-  display: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-icon .navicon {
-  background: white;
-  display: block;
-  height: 3px;
-  width: 30px;
-  position: relative;
-}
-
-.menu-icon .navicon:before,
-.menu-icon .navicon:after {
-  background: white;
-  content: '';
-  display: block;
-  height: 3px;
-  width: 30px;
-  position: absolute;
-}
-
-.menu-icon .navicon:before {
-  top: 8px;
-}
-
-.menu-icon .navicon:after {
-  top: -8px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .header-container {
-    flex-wrap: wrap;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 10;
-    border-top: 1px solid #ddd;
-  }
-
-  #menu-toggle:checked + label + nav .menu {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  .navigation {
-    width: 100%;
-  }
-
-  .contact-button {
-    margin: 10px auto;
-  }
-}
-
-@media (min-width: 769px) {
-  .header-container {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .navigation {
-    justify-self: center;
-  }
-
-  .menu {
-    justify-content: center;
-  }
-}
-
-@media (min-width: 769px) {
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-  }
-
-  .navigation {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .menu {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    list-style: none;
-  }
-
-  .menu li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #0032e2;
-  }
-
-  .contact-button {
-    background-color: #ffc83d;
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
-@media (min-width: 769px) {
-  header {
-    width: 100%;
-    background-color: #0000aa;
-  }
-
-  .header-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-  }
-
-  .navigation {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .menu {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    list-style: none;
-  }
-
-  .menu li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #0032e2;
-  }
-
-  .contact-button {
-    background-color: #ffc83d;
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
-@media (min-width: 769px) {
-  .navigation {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-direction: row-reverse;
-  }
-
-  .menu {
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@media (min-width: 769px) {
-  .header-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    padding: 15px 30px;
-  }
-
-  .menu-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .menu {
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    list-style: none;
-  }
-
-  .menu li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #0032e2;
-  }
-
-  .contact-button {
-    background-color: #ffc83d;
-    padding: 10px 20px;
-    border-radius: 30px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .logo {
-    order: 1;
-    flex: 1;
-    text-align: left;
-  }
-
-  .contact-button {
-    order: 2;
-    flex: 1;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .hamburger-wrapper {
-    order: 3;
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-</style>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chiamafranco - Il tuo tuttofare</title>
+    <style>
+        /* Reset e Base  */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #ffffff;
+            color: #1b1b1b;
+        }
+
+        /* Header  */
+        header {
+            background: #0b0baf;
+            color: white;
+            padding: 20px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        header .logo img {
+            height: 40px;
+            max-width: 100%;
+        }
+
+        .menu-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-left: 15px;
+        }
+
+        .menu a {
+            color: #0032e2;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+
+        .contact-button {
+            background-color: #ffc83d;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hamburger Menu  */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-icon .navicon {
+            background: white;
+            display: block;
+            height: 3px;
+            width: 30px;
+            position: relative;
+        }
+
+        .menu-icon .navicon::before,
+        .menu-icon .navicon::after {
+            background: white;
+            content: '';
+            display: block;
+            height: 3px;
+            width: 30px;
+            position: absolute;
+            transition: all 0.2s ease-out;
+        }
+
+        .menu-icon .navicon::before {
+            top: 8px;
+        }
+
+        .menu-icon .navicon::after {
+            top: -8px;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        #menu-toggle:checked+.menu-icon .navicon {
+            background: transparent;
+        }
+
+        #menu-toggle:checked+.menu-icon .navicon::before {
+            transform: rotate(-45deg);
+            top: 0;
+        }
+
+        #menu-toggle:checked+.menu-icon .navicon::after {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        /* Hero Section  */
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(to bottom right, #0011a8, #0b41df);
+            color: white;
+            padding: 60px 20px;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .hero-text a {
+            background-color: #ffc83d;
+            color: black;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Services Section  */
+        .services {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .service-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service-box {
+            flex: 1 1 250px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .service-box button {
+            background-color: #ffc83d;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -30px;
+        }
+
+        .service-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .service-details div {
+            flex: 1 1 250px;
+            margin: 10px;
+        }
+
+        .service-details h3 {
+            font-size: 1.2em;
+        }
+
+        .service-details p,
+        .service-details ul {
+            font-size: 0.95em;
+        }
+
+        /* Intro Section  */
+        .intro-section {
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-text {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .intro-text h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .intro-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .intro-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Perche Section  */
+        .perche-section {
+            padding: 60px 20px;
+            background-color: #f9f8ff;
+        }
+
+        .perche-section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .perche-reasons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .perche-reason {
+            flex: 1 1 200px;
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .perche-reason img {
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .perche-reason h3 {
+            font-size: 1.2em;
+        }
+
+        .perche-reason p {
+            font-size: 1em;
+        }
+
+        /* Testimonianza Section  */
+        .testimonianza-section {
+            background-color: #f6f3fa;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .testimonianza-section img {
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .testimonianza-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+            color: #4a4a4a;
+        }
+
+        .testimonianza-section .author {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+
+        /* CTA Preventivo Section  */
+        .cta-preventivo-section {
+            background: linear-gradient(to bottom right, #0011a8, #0b41df);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta-preventivo-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .cta-preventivo-section a {
+            display: inline-block;
+            background-color: #ffc83d;
+            color: #000;
+            padding: 15px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .cta-preventivo-section p {
+            margin: 20px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .cta-preventivo-section .whatsapp-button {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+        }
+
+        /* Footer  */
+        footer {
+            background-color: #f8f8f8;
+            padding: 40px 20px;
+            color: #3d3d3d;
+            font-size: 0.95em;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer h3 {
+            color: #3d3d3d;
+        }
+
+        footer a {
+            color: #0b41df;
+            text-decoration: none;
+        }
+
+        footer .footer-bottom {
+            margin-top: 30px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        footer .footer-bottom a {
+            margin: 0 10px;
+        }
+
+        footer .copyright {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        /* Media Queries  */
+        @media (max-width: 768px) {
+            .header-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+            }
+
+            .logo {
+                order: 1;
+                flex: 1;
+                text-align: left;
+            }
+
+            .contact-button {
+                order: 2;
+                flex: 1;
+                text-align: center;
+                margin: 10px auto;
+            }
+
+            .hamburger-wrapper {
+                order: 3;
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            .menu {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                background: #fff;
+                font-size: 1.2em;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                flex-direction: column;
+            }
+
+            .menu li {
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            #menu-toggle:checked+label+.menu {
+                display: block;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                z-index: 9999;
+                padding: 10px 0;
+                border-top: 1px solid #ccc;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-<div class="header-container">
-<div class="logo">
-<img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" style="height: 40px;"/>
-</div>
-<input id="menu-toggle" type="checkbox"/>
-<label class="menu-icon" for="menu-toggle">
-<span class="navicon"></span>
-</label>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" />
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-icon" for="menu-toggle">
+                <span class="navicon"></span>
+            </label>
+            <div class="menu-wrapper">
+                <nav class="navigation">
+                    <ul class="menu">
+                        <li><a href="#chisiamo">Chi siamo</a></li>
+                        <li><a href="#recensioni">Recensioni</a></li>
+                        <li><a href="#perchenoi">Perché noi</a></li>
+                        <li><a href="#contatti">Contatti</a></li>
+                    </ul>
+                </nav>
+                <a class="contact-button" href="#contact">Contattaci</a>
+            </div>
+        </div>
+    </header>
 
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
+            <p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
+            <a href="#preventivo">Chiedi preventivo</a>
+        </div>
+        <div class="hero-image">
+            <img alt="Servizi Chiamafranco" src="image.png" />
+        </div>
+    </section>
 
-<div class="menu-wrapper"><nav class="navigation">
-<ul class="menu">
-<li><a href="#chisiamo">Chi siamo</a></li>
-<li><a href="#recensioni">Recensioni</a></li>
-<li><a href="#perchenoi">Perché noi</a></li>
-<li><a href="#contatti">Contatti</a></li>
-</ul>
-</nav><a class="contact-button" href="#contact">Contattaci</a></div></div>
-</header>
-<section class="hero-section">
-<div class="hero-text">
-<h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
-<p>Affidati a Chiamafranco per servizi di traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia. Offriamo interventi rapidi, sicuri e di qualità per privati e aziende.</p>
-<a href="#preventivo">Chiedi preventivo</a>
-</div>
-<div class="hero-image">
-<img alt="Servizi Chiamafranco" src="image.png"/>
-</div>
-</section>
-<section class="services">
-<h2>I nostri servizi</h2>
-<div class="service-boxes">
-<div class="service-box">
-<img alt="Sgomberi" src="sgomberi.png"/>
-<button>OTTIENI PREVENTIVO</button>
-</div>
-<div class="service-box">
-<img alt="Imbiancatura" src="imbiancatura.png"/>
-<button>OTTIENI PREVENTIVO</button>
-</div>
-<div class="service-box">
-<img alt="Montaggio Mobili" src="montaggio.png"/>
-<button>OTTIENI PREVENTIVO</button>
-</div>
-<div class="service-box">
-<img alt="Traslochi" src="traslochi.png"/>
-<button>OTTIENI PREVENTIVO</button>
-</div>
-</div>
-<div class="service-details">
-<div>
-<h3>Sgomberi (appartamenti e uffici)</h3>
-<p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
-<p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma.</p>
-<ul>
-<li>✓ Sgombero rapido e pulito</li>
-<li>✓ Smaltimento mobili ed elettrodomestici a norma</li>
-<li>✓ Cantine, garage, uffici, appartamenti, negozi</li>
-</ul>
-</div>
-<div>
-<h3>Imbiancatura interni ed esterni</h3>
-<p>🖌️ <strong>Dai nuova vita ai tuoi ambienti!</strong></p>
-<p>Servizio preciso e pulito, con materiali di qualità e attenzione ai dettagli.</p>
-<ul>
-<li>✓ Imbiancatura di interni ed esterni</li>
-<li>✓ Pareti uniformi e senza imperfezioni</li>
-<li>✓ Lavoro rapido e senza sporcare</li>
-<li>✓ Consulenza su colori e finiture</li>
-</ul>
-</div>
-<div>
-<h3>Montaggio e smontaggio mobili</h3>
-<p>🔧 <strong>Precisione e rapidità garantite!</strong></p>
-<p>Ci occupiamo di smontaggio e montaggio con precisione e professionalità.</p>
-<ul>
-<li>✓ IKEA, Mondo Convenienza, Leroy Merlin, ecc.</li>
-<li>✓ Montaggio su misura con precisione</li>
-<li>✓ Servizio rapido e senza pensieri</li>
-</ul>
-</div>
-<div>
-<h3>Traslochi nazionali e internazionali</h3>
-<p>📦 <strong>Devi traslocare? Ci pensiamo noi!</strong></p>
-<p>Servizio rapido, sicuro e professionale, con massima cura per i tuoi beni.</p>
-<ul>
-<li>✓ Smontaggio e rimontaggio mobili</li>
-<li>✓ Trasporto veloce e senza danni</li>
-<li>✓ Protezione per oggetti fragili</li>
-</ul>
-</div>
-</div>
-</section>
-<section class="intro-section" style="padding: 0px 20px;">
-<div style="flex: 1; padding: 20px;">
-<h2 style="font-size: 2em; margin-bottom: 20px;">Diamo forma ai tuoi progetti</h2>
-<p style="font-size: 1.1em; line-height: 1.6;">
-        Chiamafranco offre <strong>traslochi, sgomberi, montaggio mobili e imbiancatura in Lombardia</strong>, garantendo qualità e affidabilità per privati e aziende.
-      </p>
-</div>
-<div style="flex: 1; text-align: center;">
-<img alt="Team al lavoro" src="intro.png" style="max-width: 100%; border-radius: 10px;"/>
-</div>
-</section>
-<section class="perche-section" style="padding: 60px 20px; background-color: #f9f8ff;">
-<h2 style="text-align: center; font-size: 2em; margin-bottom: 40px;">Perché scegliere Chiamafranco?</h2>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
-<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-<img alt="Preventivi" src="icon-preventivi.png" style="height: 50px; margin-bottom: 15px;"/>
-<h3>Preventivi trasparenti</h3>
-<p>Preventivi trasparenti e personalizzati, senza costi nascosti. Ti offriamo un servizio su misura al giusto prezzo.</p>
-</div>
-<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-<img alt="Personale" src="icon-personale.png" style="height: 50px; margin-bottom: 15px;"/>
-<h3>Personale qualificato</h3>
-<p>Professionisti esperti al tuo servizio: gestiamo ogni fase del trasloco, dall’imballaggio al montaggio, con cura e competenza.</p>
-</div>
-<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-<img alt="Puntualità" src="icon-puntualita.png" style="height: 50px; margin-bottom: 15px;"/>
-<h3>Puntualità e precisione</h3>
-<p>Rispettiamo i tempi concordati e curiamo ogni fase con precisione, per un trasloco senza stress e sempre puntuale.</p>
-</div>
-<div style="flex: 1 1 200px; text-align: center; max-width: 250px;">
-<img alt="Assicurazione" src="icon-assicurazione.png" style="height: 50px; margin-bottom: 15px;"/>
-<h3>Copertura assicurativa</h3>
-<p>Ogni trasloco è assicurato, garantendo la massima sicurezza e protezione per i tuoi beni in ogni situazione.</p>
-</div>
-</div>
-</section>
-<section class="testimonianza" style="background-color: #f6f3fa; text-align: center; padding: 60px 20px;">
-<img alt="Testimonianza" src="testimonial-icon.png" style="height: 60px; margin-bottom: 20px;"/>
-<p style="max-width: 800px; margin: 0 auto; font-size: 1.2em; color: #4a4a4a;">
-      Servizio puntuale e professionale! Il team di <strong>Chiamafranco</strong> ha montato i miei mobili con precisione e cura, lasciando tutto in ordine. <strong>Super consigliati!</strong>
-</p>
-<p style="margin-top: 20px; font-weight: bold; color: #4a4a4a;">Elena R.</p>
-</section>
-<section class="cta-preventivo" style="background: linear-gradient(to bottom right, #0011a8, #0b41df); color: white; text-align: center; padding: 80px 20px;">
-<h2 style="font-size: 2.5em; margin-bottom: 30px;">Richiedi subito il tuo preventivo</h2>
-<a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 15px 30px; border-radius: 40px; font-weight: bold; font-size: 1.1em; text-decoration: none; margin-bottom: 20px;">Chiedi preventivo</a>
-<p style="margin: 20px 0; font-size: 1.2em; font-weight: bold;">Oppure</p>
-<a href="https://wa.me/393475011844" style="display: inline-block; background-color: #25d366; color: white; padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 1.1em; text-decoration: none;">
-      💬 Chat su WhatsApp
-    </a>
-</section>
-<footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
-<div>
-<h3 style="color: #3d3d3d;">chiamafranco</h3>
-<p>Indirizzo: V. Ardengo Folperti, 35 - Pavia, 27100</p>
-<p>Telefono: <a href="tel:+393475011844" style="color: #0b41df; text-decoration: none;">+39 347 501 1844</a></p>
-<p>📧 Email: <a href="mailto:info@chiamafranco.com" style="color: #0b41df; text-decoration: none;">info@chiamafranco.com</a></p>
-</div>
-<div>
-<h3 style="color: #3d3d3d;">📍 CHIAMAFRANCO</h3>
-<em>"Affidabilità e professionalità per i tuoi progetti"</em>
-<p style="margin-top: 10px;"><strong>🔷 I Nostri Servizi</strong><br/>
-          🚛 Traslochi | 📦 Sgomberi | 🛠️ Montaggio Mobili | 🎨 Imbiancatura</p>
-</div>
-<div>
-<h3 style="color: #3d3d3d;">📩 RICHIEDI UN PREVENTIVO VELOCE!</h3>
-<a href="#preventivo" style="display: inline-block; background-color: #ffc83d; color: #000; padding: 12px 24px; border-radius: 30px; font-weight: bold; text-decoration: none;">Invia Richiesta</a>
-</div>
-</div>
-<div style="margin-top: 30px; text-align: center; border-top: 1px solid #ddd; padding-top: 20px;">
-<a href="#servizi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Servizi</a>
-<a href="#chisiamo" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Chi siamo</a>
-<a href="#recensioni" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Recensioni</a>
-<a href="#perchenoi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Perché noi</a>
-<a href="#contatti" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Contatti</a>
-<p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
-</div>
-</footer>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('.menu a');
-    const toggle = document.getElementById('menu-toggle');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.checked = false;
-      });
-    });
-  });
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.querySelector('ul.menu');
-
-    function updateMenuVisibility() {
-      if (menuToggle.checked) {
-        menu.classList.add('menu--visible');
-      } else {
-        menu.classList.remove('menu--visible');
-      }
-    }
-
-    menuToggle.addEventListener('change', updateMenuVisibility);
-    updateMenuVisibility(); // inizializza
-  });
-</script>
-</body>
-</html>
+    <section class="services">
+        <h2>I nostri servizi</h2>
+        <div class="service-boxes">
+            <div class="service-box">
+                <img alt="Sgomberi" src="sgomberi.png" />
+                <button>OTTIENI PREVENTIVO</button>
+            </div>
+            <div class="service-box">
+                <img alt="Imbiancatura" src="imbiancatura.png" />
+                <button>OTTIENI PREVENTIVO</button>
+            </div>
+            <div class="service-box">
+                <img alt="Montaggio Mobili" src="montaggio.png" />
+                <button>OTTIENI PREVENTIVO</button>
+            </div>
+            <div class="service-box">
+                <img alt="Traslochi" src="traslochi.png" />
+                <button>OTTIENI PREVENTIVO</button>
+            </div>
+        </div>
+        <div class="service-details">
+            <div>
+                <h3>Sgomberi (appartamenti e uffici)</h3>
+                <p>🚛 <strong>Sgomberiamo tutto, senza stress!</strong></p>
+                <p>Devi liberare spazio? Sgomberiamo appartamenti, uffici, cantine e garage con smaltimento rapido, sicuro e a norma.</p>
+                <ul>
+                    <li>✓ Sgombero rapido e pulito</li>
+                    <li>✓ Smaltimento mobili ed elettrodomestici a norma</li>
+                    <li>✓ Cantine, garage, uffici, appartamenti, negozi</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Imbiancatura interni ed esterni</h3>
+                <p>🖌️ <strong>Dai nuova vita ai tuoi
