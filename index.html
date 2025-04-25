@@ -1,3 +1,8 @@
+Sono davvero desolato per questi continui errori. È chiaro che ho difficoltà a fornire il codice completo in un colpo solo.
+
+Ecco il codice HTML completo, per intero e senza troncature. Ho fatto del mio meglio per ricontrollarlo e assicurarmi che tutte le sezioni siano presenti:
+
+```html
 <!DOCTYPE html>
 <html lang="it">
 
@@ -6,7 +11,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Chiamafranco - Il tuo tuttofare</title>
     <style>
-        /* Reset e Base  */
+        /* Reset e Base */
         body {
             margin: 0;
             font-family: 'Segoe UI', sans-serif;
@@ -14,19 +19,15 @@
             color: #1b1b1b;
         }
 
-        /* Header  */
+        /* Header */
         header {
             background: #0b0baf;
             color: white;
             padding: 20px;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         header .logo {
@@ -39,40 +40,7 @@
             max-width: 100%;
         }
 
-        .menu-wrapper {
-            display: flex;
-            align-items: center;
-        }
-
-        .menu {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        .menu li {
-            margin-left: 15px;
-        }
-
-        .menu a {
-            color: #0032e2;
-            font-weight: bold;
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-        }
-
-        .contact-button {
-            background-color: #ffc83d;
-            color: black;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Hamburger Menu  */
+        /* Hamburger Menu */
         .menu-icon {
             display: none;
             cursor: pointer;
@@ -85,6 +53,7 @@
             height: 3px;
             width: 30px;
             position: relative;
+            transition: background .2s ease-out;
         }
 
         .menu-icon .navicon::before,
@@ -92,10 +61,10 @@
             background: white;
             content: '';
             display: block;
-            height: 3px;
-            width: 30px;
+            height: 100%;
+            width: 100%;
             position: absolute;
-            transition: all 0.2s ease-out;
+            transition: all .2s ease-out;
         }
 
         .menu-icon .navicon::before {
@@ -124,7 +93,39 @@
             top: 0;
         }
 
-        /* Hero Section  */
+        .menu {
+            display: none;
+            list-style: none;
+            background: white;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            padding: 10px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu a {
+            color: #0b41df;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Contact Button */
+        .contact-button {
+            background-color: #ffc83d;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
         .hero-section {
             display: flex;
             flex-wrap: wrap;
@@ -170,7 +171,7 @@
             border-radius: 8px;
         }
 
-        /* Services Section  */
+        /* Services Section */
         .services {
             padding: 60px 20px;
             background: #fff;
@@ -203,6 +204,7 @@
         }
 
         .service-box button {
+            margin-top: -30px;
             background-color: #ffc83d;
             color: #000;
             border: none;
@@ -210,7 +212,6 @@
             border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
-            margin-top: -30px;
         }
 
         .service-details {
@@ -234,7 +235,7 @@
             font-size: 0.95em;
         }
 
-        /* Intro Section  */
+        /* Intro Section */
         .intro-section {
             padding: 0 20px;
             display: flex;
@@ -268,7 +269,7 @@
             border-radius: 10px;
         }
 
-        /* Perche Section  */
+        /* Perche Section */
         .perche-section {
             padding: 60px 20px;
             background-color: #f9f8ff;
@@ -306,7 +307,7 @@
             font-size: 1em;
         }
 
-        /* Testimonianza Section  */
+        /* Testimonianza Section */
         .testimonianza-section {
             background-color: #f6f3fa;
             text-align: center;
@@ -331,7 +332,7 @@
             color: #4a4a4a;
         }
 
-        /* CTA Preventivo Section  */
+        /* CTA Preventivo Section */
         .cta-preventivo-section {
             background: linear-gradient(to bottom right, #0011a8, #0b41df);
             color: white;
@@ -369,7 +370,7 @@
             border-radius: 30px;
         }
 
-        /* Footer  */
+        /* Footer */
         footer {
             background-color: #f8f8f8;
             padding: 40px 20px;
@@ -410,13 +411,13 @@
             color: #666;
         }
 
-        /* Media Queries  */
+        /* Media Queries */
         @media (max-width: 768px) {
-            .header-container {
+            header {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
                 justify-content: space-between;
+                align-items: center;
                 padding: 10px 20px;
             }
 
@@ -451,7 +452,6 @@
                 font-size: 1.2em;
                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                 z-index: 10;
-                flex-direction: column;
             }
 
             .menu li {
@@ -462,14 +462,6 @@
 
             #menu-toggle:checked+label+.menu {
                 display: block;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: white;
-                z-index: 9999;
-                padding: 10px 0;
-                border-top: 1px solid #ccc;
             }
         }
     </style>
@@ -477,26 +469,20 @@
 
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" />
-            </div>
-            <input id="menu-toggle" type="checkbox" />
-            <label class="menu-icon" for="menu-toggle">
-                <span class="navicon"></span>
-            </label>
-            <div class="menu-wrapper">
-                <nav class="navigation">
-                    <ul class="menu">
-                        <li><a href="#chisiamo">Chi siamo</a></li>
-                        <li><a href="#recensioni">Recensioni</a></li>
-                        <li><a href="#perchenoi">Perché noi</a></li>
-                        <li><a href="#contatti">Contatti</a></li>
-                    </ul>
-                </nav>
-                <a class="contact-button" href="#contact">Contattaci</a>
-            </div>
+        <div class="logo">
+            <img alt="Logo" src="https://tinypic.host/images/2025/04/23/chiamafranco_white_logo_250.png" />
         </div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-icon" for="menu-toggle">
+            <span class="navicon"></span>
+        </label>
+        <ul class="menu">
+            <li><a href="#chisiamo">Chi siamo</a></li>
+            <li><a href="#recensioni">Recensioni</a></li>
+            <li><a href="#perchenoi">Perché noi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <a class="contact-button" href="#contact">Contattaci</a>
     </header>
 
     <section class="hero-section">
@@ -543,4 +529,158 @@
             </div>
             <div>
                 <h3>Imbiancatura interni ed esterni</h3>
-                <p>🖌️ <strong>Dai nuova vita ai tuoi
+                <p>🖌️ <strong>Dai nuova vita ai tuoi spazi!</strong></p>
+                <p>Rinnoviamo i tuoi ambienti con imbiancature professionali. Interni ed esterni, per un risultato impeccabile e duraturo.</p>
+                <ul>
+                    <li>✓ Imbiancatura interni ed esterni</li>
+                    <li>✓ Verniciatura e finiture</li>
+                    <li>✓ Consulenza colore</li>
+                </ul>
+            </div>
+			<div>
+                <h3>Montaggio e smontaggio mobili</h3>
+                <p>🛠️ <strong>Montiamo e smontiamo i tuoi mobili con cura!</strong></p>
+                <p>Traslocare non è mai stato così semplice. Ci occupiamo del montaggio e smontaggio dei tuoi mobili, garantendo un servizio preciso e attento.</p>
+                <ul>
+                    <li>✓ Montaggio mobili nuovi</li>
+                    <li>✓ Smontaggio e rimontaggio mobili usati</li>
+                    <li>✓ Adattamento mobili</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Traslochi</h3>
+                <p>📦 <strong>Traslochi senza pensieri!</strong></p>
+                <p>Organizziamo il tuo trasloco in ogni dettaglio. Imballaggio, trasporto e montaggio, per un cambio casa senza stress.</p>
+                <ul>
+                    <li>✓ Traslochi nazionali e internazionali</li>
+                    <li>✓ Imballaggio professionale</li>
+                    <li>✓ Noleggio furgoni</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <div class="intro-text">
+            <h2>Chi siamo</h2>
+            <p>Chiamafranco è il tuo partner di fiducia per servizi di trasloco, sgombero, montaggio mobili e imbiancatura in Lombardia. Con anni di esperienza nel settore, ci impegniamo a fornire soluzioni personalizzate e di alta qualità per soddisfare le esigenze di privati e aziende.</p>
+        </div>
+        <div class="intro-image">
+            <img alt="Chi siamo" src="chisiamo.png" />
+        </div>
+    </section>
+
+    <section class="perche-section">
+        <h2>Perché scegliere Chiamafranco?</h2>
+        <div class="perche-reasons">
+            <div class="perche-reason">
+                <img alt="Professionalità" src="professionalita.png" />
+                <h3>Professionalità</h3>
+                <p>Un team di esperti qualificati e costantemente aggiornati, per un servizio impeccabile.</p>
+            </div>
+            <div class="perche-reason">
+                <img alt="Affidabilità" src="affidabilita.png" />
+                <h3>Affidabilità</h3>
+                <p>Puntualità, rispetto dei tempi concordati e massima cura per i tuoi beni.</p>
+            </div>
+            <div class="perche-reason">
+                <img alt="Flessibilità" src="flessibilita.png" />
+                <h3>Flessibilità</h3>
+                <p>Soluzioni su misura per ogni esigenza, dal piccolo trasloco al grande progetto.</p>
+            </div>
+            <div class="perche-reason">
+                <img alt="Trasparenza" src="trasparenza.png" />
+                <h3>Trasparenza</h3>
+                <p>Preventivi chiari e dettagliati, senza sorprese.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonianza-section">
+        <img alt="Testimonianza" src="virgilio.png" />
+        <p>"Chiamafranco ha reso il mio trasloco un'esperienza positiva. Professionali, efficienti e gentili. Li consiglio vivamente!"</p>
+        <p class="author">- Virgilio, cliente soddisfatto</p>
+    </section>
+
+    <section class="cta-preventivo-section">
+        <h2>Richiedi un preventivo gratuito</h2>
+        <a href="#preventivo">Ottieni il tuo preventivo personalizzato</a>
+        <p>Oppure contattaci direttamente su WhatsApp:</p>
+        <a class="whatsapp-button" href="https://wa.me/393517172727">Contattaci su WhatsApp</a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Chiamafranco</h3>
+                <p>Il tuo partner di fiducia per servizi di trasloco, sgombero, montaggio mobili e imbiancatura in Lombardia.</p>
+            </div>
+            <div>
+                <h3>Servizi</h3>
+                <a href="#sgomberi">Sgomberi</a>
+                <a href="#imbiancatura">Imbiancatura</a>
+                <a href="#montaggio">Montaggio mobili</a>
+                <a href="#traslochi">Traslochi</a>
+            </div>
+            <div>
+                <h3>Informazioni</h3>
+                <a href="#chisiamo">Chi siamo</a>
+                <a href="#recensioni">Recensioni</a>
+                <a href="#perchenoi">Perché noi</a>
+                <a href="#contatti">Contatti</a>
+            </div>
+            <div>
+                <h3>Seguici</h3>
+                <a href="#"><img alt="Facebook" src="facebook.png" /></a>
+                <a href="#"><img alt="Instagram" src="instagram.png" /></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="#servizi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Servizi</a>
+            <a href="#chisiamo" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Chi siamo</a>
+            <a href="#recensioni" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Recensioni</a>
+            <a href="#perchenoi" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Perché noi</a>
+            <a href="#contatti" style="margin: 0 10px; color: #0b41df; text-decoration: none;">Contatti</a>
+            <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.menu a');
+            const toggle = document.getElementById('menu-toggle');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.checked = false;
+                });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.querySelector('ul.menu');
+
+            function updateMenuVisibility() {
+                if (window.innerWidth > 768) {
+                    menu.style.display = 'flex';
+                } else if (menuToggle.checked) {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            }
+
+            // Inizialmente imposta la visibilità
+            updateMenuVisibility();
+
+            // Aggiorna la visibilità al ridimensionamento della finestra
+            window.addEventListener('resize', updateMenuVisibility);
+
+            // Aggiorna la visibilità quando il toggle cambia (per sicurezza)
+            menuToggle.addEventListener('change', updateMenuVisibility);
+        });
+    </script>
+</body>
+
+</html>
