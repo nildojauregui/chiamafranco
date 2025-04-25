@@ -897,32 +897,92 @@ header {
 }
 
 
+@media (max-width: 768px) {
+  .header-mobile .header-wrapper {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header-mobile .header-wrapper > div {
+    flex: 1;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(1) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper > div:nth-child(3) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .header-mobile .header-wrapper img {
+    height: 40px;
+    margin-left: 0 !important;
+  }
+
+  .header-mobile .contact-button {
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 769px) {
   .header-desktop > div {
     max-width: 1280px;
     margin: auto;
-    padding-left: 0 !important;
-    padding-right: 20px !important;
+    padding-left: 10px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .header-desktop > div > div:first-child {
-    margin-right: 60px !important;
-    padding-left: 0 !important;
+    flex: 1;
+    text-align: left;
+    margin-right: 50px;
+  }
+
+  .header-desktop nav {
+    flex: 2;
+    text-align: center;
   }
 
   .header-desktop nav ul {
     display: flex !important;
+    justify-content: center;
     flex-wrap: nowrap !important;
     gap: 30px !important;
-  }
-
-  .header-desktop nav ul li {
-    white-space: nowrap !important;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .header-desktop nav ul li a {
-    display: inline-block !important;
-    white-space: nowrap !important;
+    white-space: nowrap;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  .header-desktop > div > div:last-child {
+    flex: 1;
+    text-align: right;
   }
 }
 </style>
