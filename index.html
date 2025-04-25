@@ -918,7 +918,7 @@ header {
 </div>
 </div>
 </header>
-<header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none;">
+<header class="header-mobile" style="background: #0b0baf; color: white; padding: 15px 0; display: none; position: relative;">
 <div class="header-wrapper" style="max-width: 1280px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
 <div style="text-align: left;">
 <a class="contact-button" href="#contact" style="background-color: #ffc83d; color: black; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: bold;">Contattaci</a>
@@ -935,7 +935,7 @@ header {
 </label>
 </div>
 </div>
-<ul class="menu-mobile" style="display: none; list-style: none; padding: 10px 20px; background: white; position: absolute; top: 70px; right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 8px; z-index: 9999;">
+<ul class="menu-mobile" style="display: none; list-style: none; padding: 20px; background: white; position: absolute; top: 70px; right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 10px; z-index: 9999; flex-direction: column; gap: 15px; width: 200px;">
 <li><a href="#chisiamo" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Chi siamo</a></li>
 <li><a href="#recensioni" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Recensioni</a></li>
 <li><a href="#perchenoi" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Perché noi</a></li>
@@ -952,8 +952,6 @@ header {
   }
   #menu-toggle:checked + label + ul.menu-mobile {
     display: flex !important;
-    flex-direction: column;
-    gap: 10px;
   }
 }
 </style>
