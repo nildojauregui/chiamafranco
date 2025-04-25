@@ -899,11 +899,18 @@ header {
 
 @media (max-width: 768px) {
   .header-mobile .header-wrapper {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+    display: grid !important;
+    grid-template-columns: auto 1fr auto !important;
+    align-items: center;
   }
-  .header-mobile .header-wrapper > div:first-child {
-    margin-left: -25px !important;
+  .header-mobile .header-wrapper > div:nth-child(1) {
+    justify-self: start !important;
+  }
+  .header-mobile .header-wrapper > div:nth-child(2) {
+    justify-self: center !important;
+  }
+  .header-mobile .header-wrapper > div:nth-child(3) {
+    justify-self: end !important;
   }
 }
 </style>
