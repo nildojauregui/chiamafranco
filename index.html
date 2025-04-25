@@ -925,84 +925,6 @@ header {
     white-space: nowrap !important;
   }
 }
-
-/* Stile menu mobile a comparsa destra */
-.menu-mobile {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 280px;
-  background-color: white;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
-  flex-direction: column;
-  padding: 20px;
-  display: none;
-  z-index: 9999;
-  transition: transform 0.3s ease;
-}
-
-.menu-mobile.open {
-  display: flex;
-  transform: translateX(0);
-}
-
-.menu-mobile label#close-menu {
-  align-self: flex-end;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.menu-mobile nav a {
-  color: #111;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 18px;
-  padding: 12px 0;
-}
-
-@media (max-width: 768px) {
-  .header-mobile .header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 12px;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(1) {
-    margin-left: 10px !important;
-  }
-
-  .header-mobile .header-wrapper > div:nth-child(2) {
-    margin-left: 8px !important;
-    margin-right: 8px !important;
-  }
-
-  .header-mobile .contact-button {
-    margin-left: auto;
-    margin-right: 0;
-  }
-
-  .menu-mobile {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 280px;
-    background-color: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
-    flex-direction: column;
-    padding: 20px;
-    display: none;
-    z-index: 9999;
-  }
-
-  #menu-toggle:checked ~ .menu-mobile {
-    display: flex;
-  }
-}
 </style>
 <style>
     body {
@@ -1993,6 +1915,7 @@ header {
 <li><a href="#contatti" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Contatti</a></li>
 </ul>
 </header>
+
 <style>
 @media (max-width: 768px) {
   .header-desktop {
@@ -2007,6 +1930,17 @@ header {
   }
 }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script>
 <section class="hero-section">
 <div class="hero-text">
 <h1>Il tuo tempo è prezioso e i tuoi progetti meritano il massimo della professionalità.</h1>
@@ -2160,27 +2094,43 @@ header {
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
-
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("menu-toggle");
-  const menu = document.querySelector(".menu-mobile");
-
-  if (toggle && menu) {
-    toggle.addEventListener("change", function () {
-      menu.style.display = this.checked ? "flex" : "none";
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.menu a');
+    const toggle = document.getElementById('menu-toggle');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.checked = false;
+      });
     });
-  }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.querySelector('ul.menu');
 
-  const closeBtn = document.getElementById("close-menu");
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      toggle.checked = false;
-      menu.style.display = "none";
+    function updateMenuVisibility() {
+      if (menuToggle.checked) {
+        menu.classList.add('menu--visible');
+      } else {
+        menu.classList.remove('menu--visible');
+      }
+    }
+
+    menuToggle.addEventListener('change', updateMenuVisibility);
+    updateMenuVisibility(); // inizializza
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
     });
   }
 });
-</script>
-</body>
+</script></body>
 </html>
