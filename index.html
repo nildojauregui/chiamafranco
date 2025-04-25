@@ -900,10 +900,13 @@ header {
 @media (max-width: 768px) {
   .header-mobile .header-wrapper {
     display: flex !important;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .header-mobile .header-wrapper > div {
