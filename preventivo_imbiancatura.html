@@ -1,17 +1,17 @@
+
 <!DOCTYPE html>
 
 <html lang="it">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sgomberi - Chiamafranco</title>
+<title>Preventivo Imbiancatura</title>
 <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #1b1b1b;
+      background-color: #fff;
+      color: #1a1a1a;
     }
     header {
       background: #0b0baf;
@@ -48,39 +48,39 @@
       font-weight: bold;
     }
     input[type="text"],
-    input[type="email"],
     textarea,
     select {
       width: 100%;
       padding: 10px;
       margin-top: 8px;
-      border-radius: 5px;
+      border-radius: 4px;
       border: 1px solid #ccc;
-      box-sizing: border-box;
     }
-    .form-section {
-      margin-top: 30px;
+    textarea {
+      height: 120px;
     }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .radio-group,
-    .checkbox-group {
+    .options {
       margin-top: 10px;
     }
-    .radio-group label,
-    .checkbox-group label {
-      display: block;
-      margin-bottom: 5px;
+    .options label {
       font-weight: normal;
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
     }
-    footer {
-      background: #f0f0f0;
-      padding: 40px 20px;
-      font-size: 0.9em;
-      text-align: center;
+    .options input {
+      margin-right: 8px;
     }
-	
+    button {
+      margin-top: 30px;
+      background-color: #0066cc;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
 	
   </style>
 <style>
@@ -1123,7 +1123,8 @@ header {
   }
 }
 
-</style><style>
+</style>
+<style>
 @media (max-width: 768px) {
   .header-desktop {
     display: none !important;
@@ -1177,42 +1178,68 @@ header {
 </ul>
 </header>
 <main>
-<h1>Richiedi un preventivo per lo sgombero</h1>
-<p>Sei alla ricerca di un servizio di sgombero? Richiedi un preventivo sgomberi in Lombardia – Pulizia rapida e professionale per appartamenti, uffici e locali commerciali. Lavoriamo in tempi brevi con smaltimento certificato!</p>
-<form action="https://script.google.com/macros/s/AKfycbwI7iKX4GjFfIvcBm5fzIkOJHIwuS2XV2Zbe8377PDKAPIIeKXc6GMxiPX9AbsE2Mlt/exec" method="POST" onsubmit="document.getElementById('success-message').style.display = 'block'" target="hidden_iframe"><input name="tipo" type="hidden" value="sgombero"/>
-<div class="form-group">
-<label for="email">Email *</label>
-<input id="email" name="email" required="" type="email"/>
+<h1>Imbiancatura</h1>
+<p>Richiedi un preventivo imbiancatura in Lombardia. Prezzi competitivi e lavori garantiti.</p>
+<form action="https://script.google.com/macros/s/AKfycbwI7iKX4GjFfIvcBm5fzIkOJHIwuS2XV2Zbe8377PDKAPIIeKXc6GMxiPX9AbsE2Mlt/exec" method="POST" onsubmit="document.getElementById('success-message').style.display = 'block'" target="hidden_iframe"><input name="tipo" type="hidden" value="imbiancatura"/>
+<label>Email *</label>
+<input name="email" required="" type="text"/>
+<label>Contatto telefonico *</label>
+<input name="telefono" required="" type="text"/>
+<label>Luogo dell'intervento</label>
+<input placeholder="Es. Piazza Duomo 3, Milano" type="text"/>
+<label>Quante stanze vuoi imbiancare? *</label>
+<div class="options">
+<label><input name="stanze" required="" type="radio"/> Solo ritocchi</label>
+<label><input name="stanze" type="radio"/> 1 stanza</label>
+<label><input name="stanze" type="radio"/> 2 stanze</label>
+<label><input name="stanze" type="radio"/> 3 stanze</label>
+<label><input name="stanze" type="radio"/> 4 stanze</label>
+<label><input name="stanze" type="radio"/> 5 stanze o più</label>
 </div>
-<div class="form-group">
-<label for="telefono">Contatto telefonico</label>
-<input id="telefono" name="telefono" type="text"/>
+<label>Quanto sono grandi le stanze da imbiancare in mq? *</label>
+<div class="options">
+<label><input name="metri" required="" type="radio"/> 20</label>
+<label><input name="metri" type="radio"/> 30</label>
+<label><input name="metri" type="radio"/> 50</label>
+<label><input name="metri" type="radio"/> 80</label>
+<label><input name="metri" type="radio"/> 100</label>
+<label><input name="metri" type="radio"/> 120</label>
+<label><input name="metri" type="radio"/> 150</label>
+<label><input name="metri" type="radio"/> 180</label>
+<label><input name="metri" type="radio"/> 200</label>
+<label><input name="metri" type="radio"/> 300</label>
+<label><input name="metri" type="radio"/> 500 o più</label>
 </div>
-<label for="luogo">Luogo dell'intervento</label>
-<input id="luogo" name="luogo" type="text"/>
-<label>Quante stanze devi sgomberare? *</label>
-<div class="radio-group">
-<label><input name="superficie" required="" type="radio" value="1"/> 1</label>
-<label><input name="superficie" type="radio" value="2"/> 2</label>
-<label><input name="superficie" type="radio" value="3"/> 3</label>
-<label><input name="superficie" type="radio" value="4"/> 4</label>
-<label><input name="superficie" type="radio" value="5+"/> 5 o più</label>
+<label>In che stato sono le superfici da tinteggiare? *</label>
+<div class="options">
+<label><input name="superfici" required="" type="radio"/> Ottimo – Pareti lisce</label>
+<label><input name="superfici" type="radio"/> Buono – Con piccole crepe</label>
+<label><input name="superfici" type="radio"/> Non buono – Danneggiate</label>
+<label><input name="superfici" type="radio"/> Pareti nuove</label>
+<label><input name="superfici" type="radio"/> Vorrei un parere</label>
 </div>
-<label>Che oggetti vuoi rimuovere?</label>
-<div class="checkbox-group">
-<label><input name="tipo_intervento" type="checkbox" value="Mobili"/> Mobili</label>
-<label><input name="tipo_intervento" type="checkbox" value="Elettrodomestici"/> Elettrodomestici</label>
-<label><input name="tipo_intervento" type="checkbox" value="Oggetti vari"/> Oggetti vari (scatoloni, vestiti, ecc.)</label>
-<label><input name="tipo_intervento" type="checkbox" value="Macerie e detriti"/> Macerie e detriti</label>
-<label><input name="tipo_intervento" type="checkbox" value="Altro"/> Altro</label>
+<label>Chi fornirà la vernice e i materiali? *</label>
+<div class="options">
+<label><input name="materiali" required="" type="radio"/> Li fornirà il professionista</label>
+<label><input name="materiali" type="radio"/> Li fornirò io</label>
 </div>
-<div class="form-group">
+<label>Hai bisogno di imbiancare anche il soffitto? *</label>
+<div class="options">
+<label><input name="soffitto" required="" type="radio"/> Sì</label>
+<label><input name="soffitto" type="radio"/> No</label>
+</div>
+<label>Quando hai bisogno del servizio? *</label>
+<div class="options">
+<label><input name="quando" required="" type="radio"/> In una data precisa</label>
+<label><input name="quando" type="radio"/> Entro due mesi</label>
+<label><input name="quando" type="radio"/> Entro sei mesi</label>
+<label><input name="quando" type="radio"/> Solo per conoscere il prezzo</label>
+</div>
 <label>Descrivi nel dettaglio di cosa hai bisogno e indica la data dell’intervento (se già definita) *</label>
-<textarea name="note" required="" rows="6"></textarea>
-</div>
+<textarea name="note" required=""></textarea>
 <div class="checkbox-container">
 <label class="styled-checkbox">
-<input name="tipo_intervento" required="" type="checkbox"/>
+<input required="" type="checkbox"/>
 <span class="checkmark"></span>
     Dichiaro di aver preso visione dell’<a href="privacy.html" target="_blank">Informativa Privacy</a>, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, così come modificato dal D.Lgs. 101/2018, e acconsento al trattamento dei miei dati personali nei limiti e per le finalità indicate nell’informativa. <span style="color: red;">*</span>
 </label>
@@ -1245,6 +1272,7 @@ header {
 <p style="margin-top: 10px; color: #666;">Copyright © 2025 chiamafranco - Tutti i diritti riservati | <a href="#" style="color: #0b41df; text-decoration: none;">Privacy Policy</a></p>
 </div>
 </footer>
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('menu-toggle');
