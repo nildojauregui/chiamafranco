@@ -1177,11 +1177,10 @@ header {
 <li><a href="#recensioni" style="color: white; text-decoration: none; font-weight: bold;">Recensioni</a></li>
 </ul>
 </header>
-
 <main>
 <h1>Imbiancatura</h1>
 <p>Richiedi un preventivo imbiancatura in Lombardia. Prezzi competitivi e lavori garantiti.</p>
-<form>
+<form><input name="tipo" type="hidden" value="imbiancatura"/>
 <label>Email *</label>
 <input required="" type="text"/>
 <label>Contatto telefonico *</label>
@@ -1239,14 +1238,13 @@ header {
 <label>Descrivi nel dettaglio di cosa hai bisogno e indica la data dell’intervento (se già definita) *</label>
 <textarea required=""></textarea>
 <div class="checkbox-container">
-  <label class="styled-checkbox">
-    <input type="checkbox" required>
-    <span class="checkmark"></span>
+<label class="styled-checkbox">
+<input required="" type="checkbox"/>
+<span class="checkmark"></span>
     Dichiaro di aver preso visione dell’<a href="privacy.html" target="_blank">Informativa Privacy</a>, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, così come modificato dal D.Lgs. 101/2018, e acconsento al trattamento dei miei dati personali nei limiti e per le finalità indicate nell’informativa. <span style="color: red;">*</span>
-  </label>
+</label>
 </div>
 <div class="form-group"><label>Autorizzo chiamafranco al trattamento dei miei dati personali per attività promozionali *</label><select name="promozione" required="True"><option value="Sì">Sì</option><option value="No">No</option></select></div><button style="margin-top:30px; padding: 12px 24px; background-color: #0b41df; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold;" type="submit">Invia richiesta</button></form>
-
 </main>
 <footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
@@ -1292,7 +1290,7 @@ formData.forEach((value, key) => {
   });
 
   try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycby58TuXvmrVUTRVuOsbG05wHuKrWDq8ObhkmT-_B3JNFjERSiM8Nu9N4wyQZGXFcNhg/exec", {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwI7iKX4GjFfIvcBm5fzIkOJHIwuS2XV2Zbe8377PDKAPIIeKXc6GMxiPX9AbsE2Mlt/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" }
