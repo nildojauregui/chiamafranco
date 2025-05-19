@@ -1179,7 +1179,7 @@ header {
 <main>
 <h1>Montaggio e/o smontaggio mobili</h1>
 <p>Devi montare mobili? Richiedi un preventivo montaggio mobili in Lombardia per un servizio rapido e senza sorprese. Ci occupiamo di smontaggio e rimontaggio con la massima precisione!</p>
-<form><input name="tipo" type="hidden" value="montaggio"/>
+<form action="https://script.google.com/macros/s/AKfycbwI7iKX4GjFfIvcBm5fzIkOJHIwuS2XV2Zbe8377PDKAPIIeKXc6GMxiPX9AbsE2Mlt/exec" method="POST" onsubmit="document.getElementById('success-message').style.display = 'block'" target="hidden_iframe"><input name="tipo" type="hidden" value="montaggio"/>
 <div class="form-group">
 <label for="email">Email *</label>
 <input id="email" required="" type="email"/>
@@ -1235,7 +1235,7 @@ header {
 <span class="checkmark"></span>
     Dichiaro di aver preso visione dell’<a href="privacy.html" target="_blank">Informativa Privacy</a>, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, così come modificato dal D.Lgs. 101/2018, e acconsento al trattamento dei miei dati personali nei limiti e per le finalità indicate nell’informativa. <span style="color: red;">*</span>
 </label>
-</div><div class="form-group"><label>Autorizzo chiamafranco al trattamento dei miei dati personali per attività promozionali *</label><select name="promozione" required="True"><option value="Sì">Sì</option><option value="No">No</option></select></div><button style="margin-top:30px; padding: 12px 24px; background-color: #0b41df; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold;" type="submit">Invia richiesta</button></form>
+</div><div class="form-group"><label>Autorizzo chiamafranco al trattamento dei miei dati personali per attività promozionali *</label><select name="promozione" required="True"><option value="Sì">Sì</option><option value="No">No</option></select></div><button style="margin-top:30px; padding: 12px 24px; background-color: #0b41df; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold;" type="submit">Invia richiesta</button></form><iframe name="hidden_iframe" style="display:none;"></iframe><div id="success-message" style="display:none; color: green; font-weight: bold; margin-top: 20px;">✅ Richiesta inviata con successo!</div>
 </main>
 <footer style="background-color: #f8f8f8; padding: 40px 20px; color: #3d3d3d; font-size: 0.95em;">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
@@ -1264,40 +1264,6 @@ header {
 </div>
 </footer>
 <script>
-    document.querySelector("form").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const data = {};
-      
-const data = { sheet: "Montaggio Mobili" };
-formData.forEach((value, key) => {
-  if (data[key]) data[key] += ", " + value;
-  else data[key] = value;
-});
-
-formData.forEach((value, key) => {
-        if (data[key]) data[key] += ", " + value;
-        else data[key] = value;
-      });
-
-      try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwI7iKX4GjFfIvcBm5fzIkOJHIwuS2XV2Zbe8377PDKAPIIeKXc6GMxiPX9AbsE2Mlt/exec", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: { "Content-Type": "application/json" }
-        });
-
-        if (response.ok) {
-          alert("Richiesta inviata con successo!");
-          this.reset();
-        } else {
-          alert("Errore durante l'invio. Riprova.");
-        }
-      } catch (err) {
-        alert("Errore di connessione.");
-      }
-    });
-    </script><script>
 document.addEventListener('DOMContentLoaded', function () {
   const toggle = document.getElementById('menu-toggle');
   const menu = document.querySelector('.menu-mobile');
