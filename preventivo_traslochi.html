@@ -1176,18 +1176,17 @@ header {
 <li><a href="#recensioni" style="color: white; text-decoration: none; font-weight: bold;">Recensioni</a></li>
 </ul>
 </header>
-
 <main>
 <h1>Traslochi</h1>
 <p>Hai bisogno di un trasloco? Richiedi un preventivo trasloco in Lombardia per un servizio rapido e professionale. Ci occupiamo del trasporto, montaggio e smontaggio in totale sicurezza!</p>
-<form action="https://script.google.com/macros/library/d/1lbfIjm0LqNboEBKbuqtF5JHrEccdCf6hMRKehPeQEZnEjqqFzPdQKzpB/4" method="POST" target="hidden_iframe" onsubmit="document.getElementById('success-message').style.display = 'block'">
+<form action="https://script.google.com/macros/library/d/1lbfIjm0LqNboEBKbuqtF5JHrEccdCf6hMRKehPeQEZnEjqqFzPdQKzpB/4" method="POST" onsubmit="document.getElementById('success-message').style.display = 'block'" target="hidden_iframe">
 <div class="form-group">
 <label for="email">Email *</label>
-<input id="email" required="" type="email"/>
+<input id="email" name="email" required="" type="email"/>
 </div>
 <div class="form-group">
 <label for="telefono">Contatto telefonico</label>
-<input id="telefono" type="text"/>
+<input id="telefono" name="telefono" type="text"/>
 </div>
 <div class="form-group">
 <label>Cosa devi traslocare?</label>
@@ -1203,12 +1202,12 @@ header {
 <div class="form-group">
 <label>Hai bisogno di servizi aggiuntivi?</label>
 <div class="checkbox-group">
-<label><input type="checkbox"/> Imballaggio e preparazione scatoloni</label>
-<label><input type="checkbox"/> Smontaggio e rimontaggio mobili</label>
-<label><input type="checkbox"/> Assicurazione</label>
-<label><input type="checkbox"/> Pulizia finale</label>
-<label><input type="checkbox"/> Trasporto pianoforte</label>
-<label><input type="checkbox"/> Altro</label>
+<label><input name="servizi" type="checkbox"/> Imballaggio e preparazione scatoloni</label>
+<label><input name="servizi" type="checkbox"/> Smontaggio e rimontaggio mobili</label>
+<label><input name="servizi" type="checkbox"/> Assicurazione</label>
+<label><input name="servizi" type="checkbox"/> Pulizia finale</label>
+<label><input name="servizi" type="checkbox"/> Trasporto pianoforte</label>
+<label><input name="servizi" type="checkbox"/> Altro</label>
 </div>
 </div>
 <div class="form-group">
@@ -1223,11 +1222,11 @@ header {
 </div>
 <div class="form-group">
 <label>Da dove stai effettuando il trasloco?</label>
-<input type="text"/>
+<input name="da" type="text"/>
 </div>
 <div class="form-group">
 <label>Dove stai andando con il trasloco?</label>
-<input type="text"/>
+<input name="a" type="text"/>
 </div>
 <div class="form-group">
 <label>Quando hai bisogno del servizio?</label>
@@ -1240,14 +1239,14 @@ header {
 </div>
 <div class="form-group">
 <label>Descrivi nel dettaglio di cosa hai bisogno e indica la data dell’intervento (se già definita) *</label>
-<textarea required="" rows="6"></textarea>
+<textarea name="note" required="" rows="6"></textarea>
 </div>
 <div class="checkbox-container">
-  <label class="styled-checkbox">
-    <input type="checkbox" required>
-    <span class="checkmark"></span>
+<label class="styled-checkbox">
+<input required="" type="checkbox"/>
+<span class="checkmark"></span>
     Dichiaro di aver preso visione dell’<a href="privacy.html" target="_blank">Informativa Privacy</a>, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, così come modificato dal D.Lgs. 101/2018, e acconsento al trattamento dei miei dati personali nei limiti e per le finalità indicate nell’informativa. <span style="color: red;">*</span>
-  </label>
+</label>
 </div>
 <div class="form-group"><label>Autorizzo chiamafranco al trattamento dei miei dati personali per attività promozionali *</label><select name="promozione" required="True"><option value="Sì">Sì</option><option value="No">No</option></select></div><button style="margin-top:30px; padding: 12px 24px; background-color: #0b41df; color: white; border: none; border-radius: 8px; font-size: 1em; font-weight: bold;" type="submit">Invia richiesta</button>
 <div id="success-message" style="display:none; color: green; font-weight: bold; margin-top: 20px;">
@@ -1319,7 +1318,5 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMenuVisibility(); // inizializza
   });
 </script>
-
-
 </body>
 </html>
