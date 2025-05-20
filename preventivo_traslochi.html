@@ -1171,9 +1171,9 @@ header {
 </div>
 </div>
 <ul class="menu-mobile" style="display: none; list-style: none; padding: 20px; background: white; position: absolute; top: 70px; right: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 10px; z-index: 9999; flex-direction: column; gap: 15px; width: 200px;">
-<li><a href="#services" style="color: white; text-decoration: none; font-weight: bold;">I nostri servizi</a></li>
-<li><a href="#perchenoi" style="color: white; text-decoration: none; font-weight: bold;">Perché noi</a></li>
-<li><a href="#recensioni" style="color: white; text-decoration: none; font-weight: bold;">Recensioni</a></li>
+<li><a href="#services" style="color: #0b41df; font-weight: bold; text-decoration: none;">I nostri servizi</a></li>
+<li><a href="#perchenoi" style="color: #0b41df; font-weight: bold; text-decoration: none;">Perché noi</a></li>
+<li><a href="#recensioni" style="color: #0b41df; font-weight: bold; text-decoration: none;">Recensioni</a></li>
 </ul>
 </header>
 <main>
@@ -1191,33 +1191,33 @@ header {
 <div class="form-group">
 <label>Cosa devi traslocare?</label>
 <div class="radio-group">
-<label><input name="trasloco" type="radio"/> Solo alcuni oggetti</label>
-<label><input name="trasloco" type="radio"/> 1 stanza</label>
-<label><input name="trasloco" type="radio"/> 2 stanze</label>
-<label><input name="trasloco" type="radio"/> 3 stanze</label>
-<label><input name="trasloco" type="radio"/> 4 stanze</label>
-<label><input name="trasloco" type="radio"/> 5 stanze o più</label>
+<label><input name="trasloco" type="radio" value="Solo alcuni oggetti"/> Solo alcuni oggetti</label>
+<label><input name="trasloco" type="radio" value="1 stanza"/> 1 stanza</label>
+<label><input name="trasloco" type="radio" value="2 stanze"/> 2 stanze</label>
+<label><input name="trasloco" type="radio" value="3 stanze"/> 3 stanze</label>
+<label><input name="trasloco" type="radio" value="4 stanze"/> 4 stanze</label>
+<label><input name="trasloco" type="radio" value="5 stanze o più"/> 5 stanze o più</label>
 </div>
 </div>
 <div class="form-group">
 <label>Hai bisogno di servizi aggiuntivi?</label>
 <div class="checkbox-group">
-<label><input name="servizi" type="checkbox"/> Imballaggio e preparazione scatoloni</label>
-<label><input name="servizi" type="checkbox"/> Smontaggio e rimontaggio mobili</label>
-<label><input name="servizi" type="checkbox"/> Assicurazione</label>
-<label><input name="servizi" type="checkbox"/> Pulizia finale</label>
-<label><input name="servizi" type="checkbox"/> Trasporto pianoforte</label>
-<label><input name="servizi" type="checkbox"/> Altro</label>
+<label><input name="servizi" type="checkbox" value="Imballaggio e preparazione scatoloni"/> Imballaggio e preparazione scatoloni</label>
+<label><input name="servizi" type="checkbox" value="Smontaggio e rimontaggio mobili"/> Smontaggio e rimontaggio mobili</label>
+<label><input name="servizi" type="checkbox" value="Assicurazione"/> Assicurazione</label>
+<label><input name="servizi" type="checkbox" value="Pulizia finale"/> Pulizia finale</label>
+<label><input name="servizi" type="checkbox" value="Trasporto pianoforte"/> Trasporto pianoforte</label>
+<label><input name="servizi" type="checkbox" value="Altro"/> Altro</label>
 </div>
 </div>
 <div class="form-group">
 <label>Quanto lontano devi traslocare?</label>
 <div class="radio-group">
-<label><input name="distanza" type="radio"/> Nello stesso edificio</label>
-<label><input name="distanza" type="radio"/> Nella stessa città</label>
-<label><input name="distanza" type="radio"/> In un’altra località a meno di 50 Km</label>
-<label><input name="distanza" type="radio"/> In un’altra località a 50–100 Km</label>
-<label><input name="distanza" type="radio"/> In un’altra località a più di 100 Km</label>
+<label><input name="distanza" type="radio" value="Nello stesso edificio"/> Nello stesso edificio</label>
+<label><input name="distanza" type="radio" value="Nella stessa città"/> Nella stessa città</label>
+<label><input name="distanza" type="radio" value="In un’altra località a meno di 50 Km"/> In un’altra località a meno di 50 Km</label>
+<label><input name="distanza" type="radio" value="In un’altra località a 50–100 Km"/> In un’altra località a 50–100 Km</label>
+<label><input name="distanza" type="radio" value="In un’altra località a più di 100 Km"/> In un’altra località a più di 100 Km</label>
 </div>
 </div>
 <div class="form-group">
@@ -1231,10 +1231,10 @@ header {
 <div class="form-group">
 <label>Quando hai bisogno del servizio?</label>
 <div class="radio-group">
-<label><input name="quando" type="radio"/> In una data precisa</label>
-<label><input name="quando" type="radio"/> Entro due mesi</label>
-<label><input name="quando" type="radio"/> Entro sei mesi</label>
-<label><input name="quando" type="radio"/> Solo per conoscere il prezzo</label>
+<label><input name="quando" type="radio" value="In una data precisa"/> In una data precisa</label>
+<label><input name="quando" type="radio" value="Entro due mesi"/> Entro due mesi</label>
+<label><input name="quando" type="radio" value="Entro sei mesi"/> Entro sei mesi</label>
+<label><input name="quando" type="radio" value="Solo per conoscere il prezzo"/> Solo per conoscere il prezzo</label>
 </div>
 </div>
 <div class="form-group">
@@ -1243,7 +1243,7 @@ header {
 </div>
 <div class="checkbox-container">
 <label class="styled-checkbox">
-<input required="" type="checkbox"/>
+<input required="" type="checkbox" value=""/>
 <span class="checkmark"></span>
     Dichiaro di aver preso visione dell’<a href="privacy.html" target="_blank">Informativa Privacy</a>, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003, così come modificato dal D.Lgs. 101/2018, e acconsento al trattamento dei miei dati personali nei limiti e per le finalità indicate nell’informativa. <span style="color: red;">*</span>
 </label>
