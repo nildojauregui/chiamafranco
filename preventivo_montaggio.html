@@ -1308,25 +1308,5 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMenuVisibility(); // inizializza
   });
 </script>
-
-<script>
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ig5ckc-P_sihoSmEDvPs-I7Gn8Lutc0&libraries=places"
-  async defer
-></script>
-
-<script>
-  function initAutocomplete() {
-    const input = document.getElementById("luogo");
-    if (input) {
-      new google.maps.places.Autocomplete(input, {
-        types: ["geocode"],
-        componentRestrictions: { country: "it" }  // limit to Italy
-      });
-    }
-  }
-
-  window.addEventListener("load", initAutocomplete);
-</script>
-
 </body>
 </html>
