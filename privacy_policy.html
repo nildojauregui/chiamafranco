@@ -36,7 +36,97 @@ html {
       text-decoration: none;
       font-weight: bold;
     }
-
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      background: linear-gradient(to bottom right, #0011a8, #0b41df);
+      color: white;
+      padding: 60px 20px;
+      align-items: center;
+    }
+    .hero-text {
+      flex: 1;
+      padding: 20px;
+    }
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .hero-text a {
+      background-color: #ffc83d;
+      color: black;
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .services {
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .services h2 {
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .service-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .service-box {
+      flex: 1 1 250px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .service-box img {
+      width: 100%;
+      height: auto;
+    }
+    .service-box button {
+      margin-top: -30px;
+      background-color: #ffc83d;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .service-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 40px;
+    }
+    .service-details div {
+      flex: 1 1 250px;
+      margin: 10px;
+    }
+    .service-details h3 {
+      font-size: 1.2em;
+    }
+    .service-details p, .service-details ul {
+      font-size: 0.95em;
+    }
   
 /* HAMBURGER MENU */
 .hamburger-wrapper {
@@ -1005,6 +1095,31 @@ header {
 <li><a href="#recensioni" style="color: #0b0baf; text-decoration: none; font-weight: bold;">Recensioni</a></li>
 </ul>
 </header>
+<style>
+@media (max-width: 768px) {
+  .header-desktop {
+    display: none !important;
+  }
+  .header-mobile {
+    display: flex !important;
+    flex-direction: column;
+  }
+  #menu-toggle:checked + label + ul.menu-mobile {
+    display: flex !important;
+  }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.querySelector('.menu-mobile');
+  if (toggle && menu) {
+    toggle.addEventListener('change', function () {
+      menu.style.display = this.checked ? 'flex' : 'none';
+    });
+  }
+});
+</script>
 <main style="max-width: 800px; margin: auto; padding: 40px 20px;">
 <h2 style="color: #0b41df;">Privacy &amp; Cookie Policy</h2>
 <p>Ai sensi del Regolamento Europeo 2016/679 (GDPR) e del D.Lgs. 196/2003, informiamo gli utenti che i dati personali raccolti da questo sito saranno trattati da:</p>
