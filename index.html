@@ -1303,6 +1303,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 </script>
+  
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
@@ -1320,5 +1321,23 @@ document.addEventListener('DOMContentLoaded', function () {
     updateMenuVisibility(); // inizializza
   });
 </script>
+
+  <!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 1rem; text-align: center; font-size: 14px; z-index: 1000;">
+  Questo sito utilizza cookie tecnici per migliorare l'esperienza utente. <a href="privacy_policy.html" style="color: #0af;">Scopri di più</a>.
+  <button onclick="acceptCookies()" style="margin-left: 15px; padding: 5px 10px; background: #0af; color: #fff; border: none; cursor: pointer;">Accetta</button>
+</div>
+
+<script>
+function acceptCookies() {
+  document.getElementById('cookie-banner').style.display = 'none';
+  localStorage.setItem('cookieAccepted', 'true');
+}
+if (localStorage.getItem('cookieAccepted')) {
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+  
 </body>
 </html>
